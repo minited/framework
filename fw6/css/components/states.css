@@ -1,0 +1,59 @@
+@layer utilities {
+  .is-active {
+    color: var(--color-accent);
+  }
+
+  .is-selected {
+    background: color-mix(in oklab, var(--color-accent) 12%, var(--color-surface));
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .is-current {
+    color: var(--color-accent);
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .is-disabled {
+    opacity: 0.45;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+  }
+
+  .is-readonly {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .is-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  .is-error {
+    --_state-color: var(--color-error);
+    border-color: var(--_state-color) !important;
+    color: var(--_state-color);
+  }
+
+  .is-success {
+    --_state-color: var(--color-success);
+    border-color: var(--_state-color) !important;
+    color: var(--_state-color);
+  }
+
+  .is-warning {
+    --_state-color: var(--color-warning);
+    border-color: var(--_state-color) !important;
+    color: var(--_state-color);
+  }
+
+  .is-info {
+    --_state-color: var(--color-info);
+    border-color: var(--_state-color) !important;
+    color: var(--_state-color);
+  }
+}

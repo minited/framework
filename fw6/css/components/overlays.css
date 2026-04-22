@@ -1,0 +1,280 @@
+@layer components {
+  .drawer {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: min(90vw, var(--drawer-panel-width, 380px));
+    height: 100%;
+    background: var(--color-elevated);
+    border-inline-end: 1px solid var(--color-border);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 250;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-100%);
+    transition:
+      transform var(--transition-base),
+      display var(--transition-base);
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .drawer {
+      transition:
+        transform var(--transition-base),
+        display var(--transition-base) allow-discrete,
+        overlay var(--transition-base) allow-discrete;
+    }
+  }
+
+  .drawer--end {
+    inset-inline-start: auto;
+    inset-inline-end: 0;
+    border-inline-end: none;
+    border-inline-start: 1px solid var(--color-border);
+    transform: translateX(100%);
+  }
+
+  .drawer:popover-open {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  @starting-style {
+    .drawer:popover-open {
+      transform: translateX(-100%);
+    }
+
+    .drawer--end:popover-open {
+      transform: translateX(100%);
+    }
+  }
+
+  .drawer::backdrop {
+    background: rgb(0 0 0 / 0);
+    transition: background var(--transition-base);
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .drawer::backdrop {
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  .drawer:popover-open::backdrop {
+    background: var(--color-backdrop);
+  }
+
+  @starting-style {
+    .drawer:popover-open::backdrop {
+      background: rgb(0 0 0 / 0);
+    }
+  }
+
+  .drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    border-block-end: 1px solid var(--color-border);
+    flex-shrink: 0;
+    min-height: var(--nav-height);
+  }
+
+  .drawer__title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .drawer__close {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--color-muted);
+    padding: 0.3rem 0.55rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      background var(--transition-fast);
+  }
+
+  .drawer__close:hover {
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+    background: var(--color-hover);
+  }
+
+  .drawer__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-6);
+    --stack-space: var(--space-6);
+  }
+
+  .drawer__footer {
+    padding: var(--space-4) var(--space-6);
+    border-block-start: 1px solid var(--color-border);
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--space-4);
+    justify-content: flex-end;
+  }
+
+  .action-menu {
+    position: relative;
+    display: inline-block;
+  }
+
+  .action-menu__list {
+    position: absolute;
+    inset-block-start: calc(100% + var(--space-2));
+    inset-inline-end: 0;
+    min-width: 180px;
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0.4rem;
+    box-shadow: var(--shadow-elevated);
+    z-index: 150;
+    list-style: none;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .action-menu__list:popover-open {
+    display: flex;
+    position: fixed;
+  }
+
+  .action-menu:focus-within .action-menu__list:not([popover]) {
+    display: flex;
+  }
+
+  .action-menu__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: 0.5rem var(--space-4);
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    color: var(--color-text);
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: start;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .action-menu__item:hover {
+    background: var(--color-hover);
+    color: var(--color-accent);
+  }
+
+  .action-menu__item--danger { color: var(--color-error); }
+
+  .action-menu__item--danger:hover {
+    background: color-mix(in oklab, var(--color-error) 12%, var(--color-surface));
+    color: var(--color-error);
+  }
+
+  .action-menu__divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 0.3rem 0;
+  }
+
+  .action-menu__label {
+    display: block;
+    padding: 0.3rem var(--space-4);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+  }
+
+  .popover-card {
+    width: min(92vw, var(--popover-card-width, 300px));
+    background: var(--color-elevated);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-elevated);
+    z-index: 200;
+    margin: 0;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .popover-card {
+      transition:
+        opacity var(--transition-fast),
+        display var(--transition-fast) allow-discrete,
+        overlay var(--transition-fast) allow-discrete;
+    }
+  }
+
+  .popover-card:popover-open {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .popover-card:popover-open {
+      opacity: 0;
+    }
+  }
+
+  .popover-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-block-end: var(--space-4);
+  }
+
+  .popover-card__avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .popover-card__name {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .popover-card__sub {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-block-start: 0.1rem;
+  }
+
+  .popover-card__body {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    margin-block-end: var(--space-4);
+  }
+
+  .popover-card__actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,24 @@
+@layer components {
+  .section-header {
+    --stack-space: var(--space-2);
+    margin-block-end: var(--space-6);
+  }
+
+  .section-header__eyebrow {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+
+  .section-header__title {
+    font-size: clamp(1.6rem, 1.5rem + 0.35vw, 1.75rem);
+    line-height: 1.1;
+  }
+
+  .section-header__intro {
+    max-width: clamp(32ch, 95vw, var(--container-max));
+    color: var(--color-muted);
+  }
+}

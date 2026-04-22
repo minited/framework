@@ -1,0 +1,35 @@
+@layer components {
+  .site-footer {
+    padding-block: var(--space-12);
+    background: var(--color-elevated);
+    border-block-start: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .site-footer__title {
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer__nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin-block-end: var(--space-8);
+  }
+
+  .site-footer__nav a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .site-footer__nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .site-footer__copyright {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+}
