@@ -1,0 +1,228 @@
+@layer components {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    min-height: var(--nav-height);
+    background: var(--color-elevated);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .site-header__inner {
+    min-height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding-inline: 1rem;
+  }
+
+  .site-header__brand {
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--color-text);
+  }
+
+  .site-header__toggle {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition:
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      background var(--transition-fast);
+  }
+
+  .site-header__toggle:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    background: var(--color-hover);
+  }
+
+  .site-nav .menu,
+  .site-nav .sub-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav .menu-item {
+    list-style: none;
+  }
+
+  .site-nav__link,
+  .site-nav .menu a {
+    display: block;
+    padding: 0.65rem 0.8rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .site-nav__link:hover,
+  .site-nav .menu a:hover {
+    background: var(--color-hover);
+    color: var(--color-accent);
+  }
+
+  .site-nav__link--cta {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .site-nav__link--cta:hover {
+    background: color-mix(in oklab, var(--color-accent) 82%, var(--color-text) 18%);
+    color: var(--color-on-accent);
+  }
+
+  .site-nav .current-menu-item > a,
+  .site-nav .current-menu-ancestor > a,
+  .site-nav .current_page_item > a,
+  .site-nav .current_page_parent > a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 1023px) {
+    .site-nav {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      width: var(--drawer-width);
+      height: calc(100dvh - var(--nav-height));
+      margin: 0;
+      padding: var(--space-6);
+      display: none;
+      flex-direction: column;
+      gap: var(--space-2);
+      background: var(--color-elevated);
+      border-right: 1px solid var(--color-border);
+      overflow-y: auto;
+      transform: var(--drawer-start-transform);
+    }
+
+    .site-header.drawer-right .site-nav {
+      left: auto;
+      right: 0;
+      border-right: none;
+      border-left: 1px solid var(--color-border);
+    }
+
+    .site-nav:popover-open {
+      display: flex;
+      transform: translateX(0);
+      transition: transform var(--transition-base);
+    }
+
+    @starting-style {
+      .site-nav:popover-open {
+        transform: var(--drawer-start-transform);
+      }
+    }
+
+    .site-nav::backdrop {
+      background: transparent;
+      transition: background var(--transition-base);
+    }
+
+    @supports (transition-behavior: allow-discrete) {
+      .site-nav::backdrop {
+        transition-behavior: allow-discrete;
+      }
+    }
+
+    .site-nav:popover-open::backdrop {
+      background: var(--color-backdrop);
+    }
+
+    @starting-style {
+      .site-nav:popover-open::backdrop {
+        background: transparent;
+      }
+    }
+
+    .site-nav > .menu,
+    .site-nav > div > .menu {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-header__toggle {
+      display: none;
+    }
+
+    .site-nav {
+      display: flex !important;
+      position: static;
+      height: var(--nav-height);
+      align-items: center;
+      gap: var(--space-2);
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      overflow: visible;
+    }
+
+    .site-header__inner:is(
+      :has(> .site-header__brand ~ .site-nav),
+      :has(> .site-nav ~ .site-header__brand)
+    ) .site-nav:popover-open {
+      position: fixed;
+      top: 0;
+      bottom: auto;
+      width: auto;
+      height: var(--nav-height);
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+      overflow: visible;
+      transform: none;
+    }
+
+    .site-header__inner:has(> .site-header__brand ~ .site-nav) .site-nav:popover-open {
+      left: auto;
+      right: max(1rem, calc((100vw - var(--container-max)) / 2 + 1rem));
+    }
+
+    .site-header__inner:has(> .site-nav ~ .site-header__brand) .site-nav:popover-open {
+      left: max(1rem, calc((100vw - var(--container-max)) / 2 + 1rem));
+      right: auto;
+    }
+
+    .site-header__inner:has(> .site-nav ~ .site-header__brand):has(.site-nav:popover-open) {
+      justify-content: flex-end;
+    }
+
+    .site-nav > .menu,
+    .site-nav > div > .menu {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav::backdrop {
+      display: none;
+    }
+  }
+}
