@@ -1,0 +1,41 @@
+@layer components {
+  /* Optional wrapper-based accordion variant.
+     This keeps the older grid-template-rows technique available as an add-on
+     for projects that prefer or need the wrapper-based approach. */
+
+  .accordion--grid::details-content {
+    height: auto;
+    overflow: visible;
+    transition: none;
+  }
+
+  .accordion--grid .accordion__content {
+    padding: 0;
+  }
+
+  .accordion--grid .accordion__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    padding-inline: var(--space-4);
+    padding-block: 0;
+    transition:
+      grid-template-rows var(--transition-base),
+      padding-block var(--transition-base);
+  }
+
+  .accordion--grid[open] .accordion__panel {
+    grid-template-rows: 1fr;
+    padding-block: var(--space-4);
+  }
+
+  .accordion--grid .accordion__panel > .accordion__content {
+    overflow: hidden;
+  }
+
+  @starting-style {
+    .accordion--grid[open] .accordion__panel {
+      grid-template-rows: 0fr;
+      padding-block: 0;
+    }
+  }
+}

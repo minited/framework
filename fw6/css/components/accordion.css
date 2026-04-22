@@ -1,0 +1,66 @@
+@layer components {
+
+  .accordion {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .accordion__summary {
+    padding: var(--space-4);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .accordion__summary:focus-visible {
+    outline-offset: -3px;
+  }
+
+  .accordion__summary::after {
+    content: "+";
+    color: var(--color-accent);
+    font-size: 1.25rem;
+    transition: transform var(--transition-fast);
+  }
+
+  .accordion[open] .accordion__summary {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .accordion[open] .accordion__summary::after {
+    transform: rotate(45deg);
+  }
+
+  .accordion__content {
+    padding: var(--space-4);
+    color: var(--color-muted);
+  }
+
+  .accordion::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height var(--transition-base);
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .accordion::details-content {
+      transition:
+        height var(--transition-base),
+        content-visibility var(--transition-base) allow-discrete;
+    }
+  }
+
+  .accordion[open]::details-content {
+    height: auto;
+  }
+
+  @starting-style {
+    .accordion[open]::details-content {
+      height: 0;
+    }
+  }
+}

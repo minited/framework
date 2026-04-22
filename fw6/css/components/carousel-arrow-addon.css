@@ -1,0 +1,44 @@
+@layer components {
+  .carousel {
+    position: relative;
+  }
+
+  .carousel__viewport {
+    overflow: hidden;
+  }
+
+  .carousel__control {
+    display: none;
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: var(--carousel-control-size);
+    height: var(--carousel-control-size);
+    border-radius: 50%;
+    background: rgb(0 0 0 / 0.58);
+    color: var(--color-text);
+    border: 1px solid color-mix(in oklab, var(--color-text) 35%, transparent);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .carousel__control:hover {
+    background: rgb(0 0 0 / 0.72);
+  }
+
+  .carousel__control--prev { left: var(--space-2); }
+  .carousel__control--next { right: var(--space-2); }
+
+  .carousel__control[hidden] {
+    display: none !important;
+  }
+
+  .js .carousel__track { scrollbar-width: none; }
+  .js .carousel__track::-webkit-scrollbar { display: none; }
+
+  .js .carousel__control {
+    display: grid;
+    place-items: center;
+  }
+}
