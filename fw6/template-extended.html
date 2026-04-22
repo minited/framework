@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Template Extended</title>
+  <!--
+  Template Extended
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/header-nav.css
+  - css/components/hero.css
+  - css/components/prose.css
+  - css/components/accordion.css
+  - css/components/form.css
+  - css/components/site-footer.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/components/prose.css" />
+  <link rel="stylesheet" href="css/components/accordion.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/site-footer.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header drawer-right">
+    <div class="site-header__inner container">
+      <a href="#" class="site-header__brand">Agency.io</a>
+      <button type="button" class="site-header__toggle" popovertarget="site-nav" aria-label="Open menu">
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" popover aria-label="Main navigation">
+        <a href="#hero" class="site-nav__link">Home</a>
+        <a href="#content" class="site-nav__link">Content</a>
+        <a href="#article" class="site-nav__link">Article</a>
+        <a href="#faq" class="site-nav__link">FAQ</a>
+        <a href="#contact" class="site-nav__link site-nav__link--cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Full-bleed hero example.
+         This section is not wrapped in .container, so the hero reaches the page edges. -->
+    <section id="hero" class="section">
+      <figure class="hero hero--fullbleed">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1800&auto=format&fit=crop"
+          alt="A modern workspace"
+          class="hero__bg"
+         
+          decoding="async"
+          fetchpriority="high"
+        />
+        <figcaption class="hero__content stack">
+          <h1 class="hero__title page-title">Use the simple starter, then grow only when needed.</h1>
+          <p class="hero__subtitle page-lead">This version shows a full-bleed hero, standard contained content, narrower prose, and a couple of optional components.</p>
+          <nav class="cluster justify-center" aria-label="Hero actions">
+            <a href="#content" class="btn btn--primary">Start Building</a>
+            <a href="#faq" class="btn btn--secondary">See FAQ</a>
+          </nav>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Standard content section that fills the container. -->
+    <section id="content" class="container section stack">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Standard content</span>
+        <h2 class="section-header__title">A contained section with text that follows the container width.</h2>
+        <p class="section-header__intro">Use this when you want ordinary page copy, explanatory text, or supporting content that aligns with the rest of the page layout.</p>
+      </header>
+
+      <div class="stack">
+        <p>This section is deliberately not wrapped in <code>.prose</code>. It shows the default content pattern where text fills the container width. This is often the best choice for marketing pages, services pages, and many general website sections.</p>
+        <p>If you want a narrower reading measure for longer text, use the prose pattern in the next section instead.</p>
+      </div>
+    </section>
+
+    <!-- Narrower prose section for longer reading text. -->
+    <section id="article" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Prose</span>
+        <h2 class="section-header__title">A narrower reading width for article-style content.</h2>
+      </header>
+
+      <article class="prose">
+        <p>The prose component is useful when the page includes longer reading text and you want a more comfortable line length. It keeps paragraphs from stretching too wide on large screens.</p>
+        <p>Use this pattern for blog posts, explanations, long descriptions, case studies, or any page where readability matters more than filling the full container width.</p>
+        <blockquote>Students should choose between standard contained content and prose based on purpose, not just habit.</blockquote>
+      </article>
+    </section>
+
+    <section class="container section stack">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Cards</span>
+        <h2 class="section-header__title">A small card grid to structure key ideas.</h2>
+      </header>
+
+      <ul class="auto-grid" style="--min: 16rem;">
+        <li class="card stack">
+          <h3>Lean</h3>
+          <p class="text-muted">Keep only the files and components you actually need.</p>
+        </li>
+        <li class="card stack">
+          <h3>Clear</h3>
+          <p class="text-muted">Use comments and file pairing notes to keep structure understandable.</p>
+        </li>
+        <li class="card stack">
+          <h3>Flexible</h3>
+          <p class="text-muted">Swap between contained heroes, full-bleed heroes, content, and prose as needed.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="faq" class="container section max-w-narrow stack">
+      <header class="section-header stack text-center">
+        <span class="section-header__eyebrow">FAQ</span>
+        <h2 class="section-header__title">Optional accordion example.</h2>
+      </header>
+
+      <details class="accordion">
+        <summary class="accordion__summary">Do I need every component on every page?</summary>
+        <div class="accordion__content">No. The whole point of the modular system is to include only what each page actually uses.</div>
+      </details>
+
+      <details class="accordion">
+        <summary class="accordion__summary">Should I always use prose for text?</summary>
+        <div class="accordion__content">No. Use prose for longer reading text. Use normal contained content when you want the copy to align with the rest of the page width.</div>
+      </details>
+    </section>
+
+    <section id="contact" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Form</span>
+        <h2 class="section-header__title">Optional form example.</h2>
+        <p class="section-header__intro">Delete this section if the page does not need a form. Keep it if you want a ready-made contact or enquiry block.</p>
+      </header>
+
+      <form class="form card stack">
+        <div class="form__field stack">
+          <label class="form__label" for="name">Full name</label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Jane Smith" />
+        </div>
+
+        <div class="form__field stack">
+          <label class="form__label" for="email">Email address</label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="jane@example.com" />
+          <p class="form__help">We’ll only use this to respond to your enquiry.</p>
+        </div>
+
+        <div class="form__field stack">
+          <label class="form__label" for="message">Message</label>
+          <textarea class="form__textarea" id="message" name="message" placeholder="Tell us what you need..."></textarea>
+        </div>
+
+        <div class="cluster" aria-label="Form actions">
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <button class="btn btn--secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container stack">
+      <h2 class="site-footer__title">Agency.io</h2>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <p class="site-footer__copyright">© 2026 Advanced UX Design Class.</p>
+    </div>
+  </footer>
+</body>
+</html>

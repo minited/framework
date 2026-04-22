@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>States</title>
+  <!--
+  States
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/states.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/states.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">States</span>
+      <h1 class="section-header__title">State modifier demo</h1>
+      <p class="section-header__intro">Composable <code>.is-*</code> classes applied to buttons, cards, and list items. These are low-specificity utilities — component styles always win when there's a conflict.</p>
+    </header>
+
+    <!-- On buttons -->
+    <section class="stack" aria-label="States on buttons">
+      <h2 style="font-size: 1rem; font-weight: 700;">On buttons</h2>
+      <div class="cluster">
+        <button class="btn btn--secondary">Default</button>
+        <button class="btn btn--secondary is-active">is-active</button>
+        <button class="btn btn--secondary is-selected">is-selected</button>
+        <button class="btn btn--secondary is-current">is-current</button>
+        <button class="btn btn--secondary is-disabled">is-disabled</button>
+        <button class="btn btn--secondary is-loading">is-loading</button>
+        <button class="btn btn--secondary is-error">is-error</button>
+        <button class="btn btn--secondary is-success">is-success</button>
+        <button class="btn btn--secondary is-warning">is-warning</button>
+        <button class="btn btn--secondary is-info">is-info</button>
+      </div>
+    </section>
+
+    <!-- On cards -->
+    <section class="stack" aria-label="States on cards">
+      <h2 style="font-size: 1rem; font-weight: 700;">On cards</h2>
+      <div class="auto-grid" style="--min: 14rem;">
+        <div class="card">Default</div>
+        <div class="card is-selected">is-selected</div>
+        <div class="card is-disabled">is-disabled</div>
+        <div class="card is-error">is-error</div>
+        <div class="card is-success">is-success</div>
+        <div class="card is-warning">is-warning</div>
+        <div class="card is-info">is-info</div>
+      </div>
+    </section>
+
+    <!-- On nav links -->
+    <section class="stack" aria-label="States on navigation">
+      <h2 style="font-size: 1rem; font-weight: 700;">On navigation links</h2>
+      <nav>
+        <ul class="cluster">
+          <li><a href="#" style="padding: 0.5rem 0.8rem; border-radius: var(--radius); text-decoration: none; color: var(--color-text);">Home</a></li>
+          <li><a href="#" class="is-active" style="padding: 0.5rem 0.8rem; border-radius: var(--radius); text-decoration: none;">is-active</a></li>
+          <li><a href="#" class="is-current" style="padding: 0.5rem 0.8rem; border-radius: var(--radius); text-decoration: none;">is-current</a></li>
+          <li><a href="#" class="is-disabled" style="padding: 0.5rem 0.8rem; border-radius: var(--radius); text-decoration: none;">is-disabled</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Reference table -->
+    <section class="stack" aria-label="Reference">
+      <h2 style="font-size: 1rem; font-weight: 700;">Quick reference</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem;">
+          <thead>
+            <tr style="border-block-end: 2px solid var(--color-border); text-align: left;">
+              <th style="padding: var(--space-4); font-weight: 700;">Class</th>
+              <th style="padding: var(--space-4); font-weight: 700;">Effect</th>
+              <th style="padding: var(--space-4); font-weight: 700;">Use case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-active</code></td>
+              <td style="padding: var(--space-4);">Accent colour</td>
+              <td style="padding: var(--color-muted); padding: var(--space-4);">Hover-like emphasis without interaction</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-selected</code></td>
+              <td style="padding: var(--space-4);">Tinted background + accent text + bold</td>
+              <td style="padding: var(--space-4);">Chosen item in a list or grid</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-current</code></td>
+              <td style="padding: var(--space-4);">Accent colour + bold + no pointer events</td>
+              <td style="padding: var(--space-4);">Current page in navigation</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-disabled</code></td>
+              <td style="padding: var(--space-4);">45% opacity + no pointer events</td>
+              <td style="padding: var(--space-4);">Unavailable action or item</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-readonly</code></td>
+              <td style="padding: var(--space-4);">Default cursor + no pointer events</td>
+              <td style="padding: var(--space-4);">Visible but non-interactive</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-loading</code></td>
+              <td style="padding: var(--space-4);">65% opacity + no pointer events</td>
+              <td style="padding: var(--space-4);">Waiting for an async action; pair with a spinner</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-error</code></td>
+              <td style="padding: var(--space-4);">Error border + error text colour</td>
+              <td style="padding: var(--space-4);">Failed state</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-success</code></td>
+              <td style="padding: var(--space-4);">Success border + success text colour</td>
+              <td style="padding: var(--space-4);">Completed state</td>
+            </tr>
+            <tr style="border-block-end: 1px solid var(--color-border);">
+              <td style="padding: var(--space-4);"><code>.is-warning</code></td>
+              <td style="padding: var(--space-4);">Warning border + warning text colour</td>
+              <td style="padding: var(--space-4);">Needs attention</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-4);"><code>.is-info</code></td>
+              <td style="padding: var(--space-4);">Info border + info text colour</td>
+              <td style="padding: var(--space-4);">Informational context</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

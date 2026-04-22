@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — Starter</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/components/shell.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/form-extended.css" />
+  <link rel="stylesheet" href="css/components/alert.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/components/data-display.css" />
+  <link rel="stylesheet" href="css/components/dialog.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+<!-- Global nav -->
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="site-header__brand" href="#">AppName</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="cluster" style="gap: var(--space-2);">
+        <li><a class="site-nav__link" href="#">Dashboard</a></li>
+        <li><a class="site-nav__link" href="#">Projects</a></li>
+        <li><a class="site-nav__link is-current" href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="shell container" style="--sidebar-width: 14rem; padding-block: var(--space-8);">
+
+  <!-- Settings sidebar nav -->
+  <aside class="shell__sidebar" style="position: static; height: auto; border-radius: var(--radius); border: 1px solid var(--color-border); overflow: hidden;">
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav__section">
+        <a class="sidebar-nav__link sidebar-nav__link--active" href="#">Profile</a>
+        <a class="sidebar-nav__link" href="#">Account</a>
+        <a class="sidebar-nav__link" href="#">Notifications</a>
+        <a class="sidebar-nav__link" href="#">Security</a>
+        <a class="sidebar-nav__link" href="#">Billing</a>
+        <a class="sidebar-nav__link" href="#">Team</a>
+        <a class="sidebar-nav__link" href="#">Integrations</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Settings content -->
+  <main class="shell__main stack" style="--stack-space: var(--space-8);">
+
+    <!-- Profile section -->
+    <section class="card stack" style="--stack-space: var(--space-6);">
+      <div class="stack" style="--stack-space: var(--space-2);">
+        <h2 style="font-size: 1.1rem; font-weight: 700;">Profile</h2>
+        <p class="text-muted" style="font-size: 0.9rem;">Update your name, avatar, and public information.</p>
+      </div>
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+      <form class="form stack" novalidate>
+        <div class="grid" style="--cols: 1; --cols-md: 2;">
+          <div class="form__field stack">
+            <label class="form__label" for="first-name">First name</label>
+            <input class="form__input" id="first-name" type="text" value="Alex" />
+          </div>
+          <div class="form__field stack">
+            <label class="form__label" for="last-name">Last name</label>
+            <input class="form__input" id="last-name" type="text" value="Rivera" />
+          </div>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="email">Email address</label>
+          <input class="form__input" id="email" type="email" value="alex@example.com" />
+          <span class="form__help">Used for login and notifications.</span>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="bio">Bio</label>
+          <textarea class="form__textarea" id="bio" style="min-height: 6rem;">Product designer and occasional developer.</textarea>
+        </div>
+        <div class="cluster" style="justify-content: flex-end; gap: var(--space-4);">
+          <button class="btn btn--secondary" type="button">Cancel</button>
+          <button class="btn btn--primary" type="submit">Save changes</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Notifications section -->
+    <section class="card stack" style="--stack-space: var(--space-6);">
+      <div class="stack" style="--stack-space: var(--space-2);">
+        <h2 style="font-size: 1.1rem; font-weight: 700;">Notifications</h2>
+        <p class="text-muted" style="font-size: 0.9rem;">Choose what you want to be notified about.</p>
+      </div>
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+      <div class="stack" style="--stack-space: var(--space-6);">
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" checked />
+          <div class="stack" style="--stack-space: 0.1rem;">
+            <span class="toggle__label" style="font-weight: 600;">Email notifications</span>
+            <span style="font-size: 0.88rem; color: var(--color-muted);">Receive updates via email.</span>
+          </div>
+        </label>
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" />
+          <div class="stack" style="--stack-space: 0.1rem;">
+            <span class="toggle__label" style="font-weight: 600;">Marketing emails</span>
+            <span style="font-size: 0.88rem; color: var(--color-muted);">News, tips, and product updates.</span>
+          </div>
+        </label>
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" checked />
+          <div class="stack" style="--stack-space: 0.1rem;">
+            <span class="toggle__label" style="font-weight: 600;">Security alerts</span>
+            <span style="font-size: 0.88rem; color: var(--color-muted);">Login attempts and security events.</span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- Danger zone -->
+    <section class="card stack" style="--stack-space: var(--space-6); border-color: var(--color-error);">
+      <div class="stack" style="--stack-space: var(--space-2);">
+        <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--color-error);">Danger Zone</h2>
+        <p class="text-muted" style="font-size: 0.9rem;">Irreversible actions. Proceed with caution.</p>
+      </div>
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+      <div class="cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+        <div class="stack" style="--stack-space: var(--space-2);">
+          <strong>Delete account</strong>
+          <p class="text-muted" style="font-size: 0.88rem;">Permanently delete your account and all data.</p>
+        </div>
+        <button class="btn btn--secondary" style="border-color: var(--color-error); color: var(--color-error);"
+                popovertarget="delete-modal">
+          Delete account
+        </button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Confirm delete modal (Popover API — no JavaScript required) -->
+<div class="modal modal--sm" id="delete-modal" popover>
+  <header class="modal__header">
+    <h2 class="modal__title">Delete account?</h2>
+    <button class="modal__close" popovertarget="delete-modal" popovertargetaction="hide" aria-label="Close">✕</button>
+  </header>
+  <div class="modal__body stack">
+    <p>This action is <strong>permanent</strong> and cannot be undone. All your data will be erased.</p>
+    <div class="alert alert--error" role="alert">
+      <span class="alert__icon">⚠</span>
+      <div class="alert__body">
+        <div class="alert__message">You will lose access to all projects and billing history.</div>
+      </div>
+    </div>
+    <div class="form__field stack">
+      <label class="form__label" for="confirm-delete">Type <strong>DELETE</strong> to confirm</label>
+      <input class="form__input" id="confirm-delete" type="text" placeholder="DELETE" />
+    </div>
+  </div>
+  <footer class="modal__footer">
+    <button class="btn btn--secondary" popovertarget="delete-modal" popovertargetaction="hide">Cancel</button>
+    <button class="btn btn--primary" style="background: var(--color-error); border-color: var(--color-error);">
+      Delete account
+    </button>
+  </footer>
+</div>
+
+
+</body>
+</html>
