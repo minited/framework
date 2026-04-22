@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Alert</title>
+  <!--
+  Alert
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/alert.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/alert.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Alert</span>
+      <h1 class="section-header__title">Alert component demo</h1>
+      <p class="section-header__intro">Contextual feedback for user actions or system states. Use <code>role="alert"</code> for dynamic content, <code>role="note"</code> for static context.</p>
+    </header>
+
+    <section class="stack" aria-label="Semantic variants">
+      <h2 style="font-size: 1rem; font-weight: 700;">Semantic variants</h2>
+      <div class="alert alert--info" role="note">
+        <span class="alert__icon">ℹ</span>
+        <div class="alert__body">
+          <div class="alert__title">Info</div>
+          <div class="alert__message">Your session will expire in 15 minutes. Save your work to avoid losing changes.</div>
+        </div>
+      </div>
+      <div class="alert alert--success" role="note">
+        <span class="alert__icon">✓</span>
+        <div class="alert__body">
+          <div class="alert__title">Success</div>
+          <div class="alert__message">Your profile has been updated successfully.</div>
+        </div>
+      </div>
+      <div class="alert alert--warning" role="note">
+        <span class="alert__icon">⚠</span>
+        <div class="alert__body">
+          <div class="alert__title">Warning</div>
+          <div class="alert__message">Storage is at 90% capacity. Consider deleting unused files or upgrading your plan.</div>
+        </div>
+      </div>
+      <div class="alert alert--error" role="alert">
+        <span class="alert__icon">✕</span>
+        <div class="alert__body">
+          <div class="alert__title">Error</div>
+          <div class="alert__message">We couldn't process your payment. Check your card details and try again.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Dismissible">
+      <h2 style="font-size: 1rem; font-weight: 700;">Dismissible
+        <span style="font-size: 0.75rem; font-weight: 400; color: var(--color-muted); margin-inline-start: var(--space-4);">Pure CSS — hidden checkbox + label</span>
+      </h2>
+
+      <div>
+        <input type="checkbox" id="close-info" class="alert-dismiss" aria-hidden="true" />
+        <div class="alert alert--info" role="status">
+          <span class="alert__icon">ℹ</span>
+          <div class="alert__body">
+            <div class="alert__title">New feature available</div>
+            <div class="alert__message">Try the new dashboard layout — it's faster and more customisable.</div>
+          </div>
+          <label class="alert__close" for="close-info" aria-label="Dismiss">✕</label>
+        </div>
+      </div>
+
+      <div>
+        <input type="checkbox" id="close-success" class="alert-dismiss" aria-hidden="true" />
+        <div class="alert alert--success" role="status">
+          <span class="alert__icon">✓</span>
+          <div class="alert__body">
+            <div class="alert__title">Changes saved</div>
+            <div class="alert__message">Your settings have been applied.</div>
+          </div>
+          <label class="alert__close" for="close-success" aria-label="Dismiss">✕</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Message only">
+      <h2 style="font-size: 1rem; font-weight: 700;">Message only</h2>
+      <div class="alert alert--warning" role="note">
+        <span class="alert__icon">⚠</span>
+        <div class="alert__body">
+          <div class="alert__message">Scheduled maintenance on Sunday 2–4 AM UTC. Expect brief downtime.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="No icon">
+      <h2 style="font-size: 1rem; font-weight: 700;">No icon</h2>
+      <div class="alert alert--info" role="note">
+        <div class="alert__body">
+          <div class="alert__title">Did you know?</div>
+          <div class="alert__message">You can drag and drop files directly into any upload field.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div style="margin-block-start: var(--space-8);">
+    <div class="alert alert--warning alert--banner" role="note">
+      <span class="alert__icon">⚠</span>
+      <div class="alert__body">
+        <div class="alert__title">Banner variant</div>
+        <div class="alert__message">Add <code>.alert--banner</code> for a full-width strip — useful at the top of a page or section.</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

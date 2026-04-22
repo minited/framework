@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Template Basic</title>
+  <!--
+  Template Basic
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/header-nav.css
+  - css/components/hero.css
+  - css/components/site-footer.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/components/site-footer.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header drawer-right">
+    <div class="site-header__inner container">
+      <a href="#" class="site-header__brand">Agency.io</a>
+      <button type="button" class="site-header__toggle" popovertarget="site-nav" aria-label="Open menu">
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" popover aria-label="Main navigation">
+        <a href="#hero" class="site-nav__link">Home</a>
+        <a href="#content" class="site-nav__link">Content</a>
+        <a href="#features" class="site-nav__link">Features</a>
+        <a href="#contact" class="site-nav__link site-nav__link--cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="container section">
+      <figure class="hero">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop"
+          alt="A modern workspace"
+          class="hero__bg"
+         
+          decoding="async"
+          fetchpriority="high"
+        />
+        <figcaption class="hero__content stack">
+          <h1 class="hero__title page-title">Start with a clean, modular page.</h1>
+          <p class="hero__subtitle page-lead">Load only the components you actually need, and keep your page easy to understand.</p>
+          <nav class="cluster justify-center" aria-label="Hero actions">
+            <a href="#content" class="btn btn--primary">Start Editing</a>
+            <a href="#features" class="btn btn--secondary">See Features</a>
+          </nav>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="content" class="container section stack">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Starter section</span>
+        <h2 class="section-header__title">A standard content section that fills the container.</h2>
+        <p class="section-header__intro">Use this pattern when you want ordinary section text and supporting copy to follow the main page width rather than a narrower reading measure.</p>
+      </header>
+
+      <div class="stack">
+        <p>This is a good default for service pages, landing pages, and general website sections. The container keeps the layout tidy, while the text is allowed to use the available width inside that container.</p>
+        <p>Delete this copy and replace it with your own content. If you want narrower long-form reading text instead, add the prose component and wrap your text in a <code>.prose</code> container.</p>
+      </div>
+    </section>
+
+    <section id="features" class="container section stack">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Cards</span>
+        <h2 class="section-header__title">A simple card grid for key points or services.</h2>
+      </header>
+
+      <ul class="auto-grid" style="--min: 16rem;">
+        <li class="card stack">
+          <h3>Modular</h3>
+          <p class="text-muted">Only load the CSS files your page actually uses.</p>
+        </li>
+        <li class="card stack">
+          <h3>Reusable</h3>
+          <p class="text-muted">Use the same layout primitives and components across multiple pages.</p>
+        </li>
+        <li class="card stack">
+          <h3>Customisable</h3>
+          <p class="text-muted">Change tokens in custom.css to update the visual identity quickly.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container stack">
+      <h2 class="site-footer__title">Agency.io</h2>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <p class="site-footer__copyright">© 2026 Advanced UX Design Class.</p>
+    </div>
+  </footer>
+</body>
+</html>

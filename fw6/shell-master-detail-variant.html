@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Shell — Master Detail</title>
+  <!--
+  Shell — Master–Detail layout
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/shell.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/shell.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+<div class="container section stack" style="--stack-space: var(--space-8);">
+  <header class="section-header stack">
+    <span class="section-header__eyebrow">Shell — Master–Detail variant</span>
+    <h1 class="section-header__title">Master–detail layout</h1>
+    <p class="section-header__intro">Scrollable list beside a detail view — email/inbox pattern. Override list width: <code>style="--master-width: 400px"</code>.</p>
+  </header>
+
+  <div class="master-detail" style="border: 1px solid var(--color-border); border-radius: var(--radius);">
+
+    <div class="master-detail__master">
+      <div style="padding: var(--space-4); border-block-end: 1px solid var(--color-border); font-weight: 700; font-size: 0.88rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.05em;">
+        Inbox
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="border-block-end: 1px solid var(--color-border); padding: var(--space-4) var(--space-6); background: color-mix(in oklab, var(--color-accent) 8%, var(--color-surface)); border-inline-start: 3px solid var(--color-accent);">
+          <div style="display: flex; justify-content: space-between; gap: var(--space-4); margin-block-end: var(--space-2);">
+            <strong style="font-size: 0.9rem;">Prof. Tanaka</strong>
+            <time style="font-size: 0.75rem; color: var(--color-muted);">10:42</time>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Lab 4 has been marked — well done on the CSS Grid section!
+          </div>
+        </li>
+        <li style="border-block-end: 1px solid var(--color-border); padding: var(--space-4) var(--space-6);">
+          <div style="display: flex; justify-content: space-between; gap: var(--space-4); margin-block-end: var(--space-2);">
+            <span style="font-size: 0.9rem;">Student Services</span>
+            <time style="font-size: 0.75rem; color: var(--color-muted);">Yesterday</time>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Reminder: enrolment for next semester closes April 30.
+          </div>
+        </li>
+        <li style="border-block-end: 1px solid var(--color-border); padding: var(--space-4) var(--space-6);">
+          <div style="display: flex; justify-content: space-between; gap: var(--space-4); margin-block-end: var(--space-2);">
+            <span style="font-size: 0.9rem;">Library</span>
+            <time style="font-size: 0.75rem; color: var(--color-muted);">Apr 18</time>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Your hold on "CSS in Depth" is ready to collect.
+          </div>
+        </li>
+        <li style="padding: var(--space-4) var(--space-6);">
+          <div style="display: flex; justify-content: space-between; gap: var(--space-4); margin-block-end: var(--space-2);">
+            <span style="font-size: 0.9rem;">IT Helpdesk</span>
+            <time style="font-size: 0.75rem; color: var(--color-muted);">Apr 15</time>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            Your VPN access has been renewed for another year.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="master-detail__detail stack" style="--stack-space: var(--space-6);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4);">
+        <div>
+          <h2 style="font-size: 1rem; font-weight: 700; margin-block-end: var(--space-2);">Lab 4 has been marked</h2>
+          <p style="font-size: 0.82rem; color: var(--color-muted);">From: Prof. Tanaka · To: Alex Rivera · Today at 10:42</p>
+        </div>
+        <span class="badge badge--success badge--pill">92 / 100</span>
+      </div>
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+      <div class="stack" style="--stack-space: var(--space-4); color: var(--color-muted); font-size: 0.9rem;">
+        <p>Hi Alex,</p>
+        <p>I've finished marking Lab 4. Great work on the CSS Grid section — the use of named template areas was exactly what I was looking for. The responsive behaviour also came together well.</p>
+        <p>I've knocked off a few points for the missing `gap` utility on the fallback layout, but overall this was a strong submission. Keep it up for the midterm project.</p>
+        <p>Best,<br>Prof. Tanaka</p>
+      </div>
+      <div class="cluster">
+        <button class="btn btn--secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Reply</button>
+        <button class="btn btn--secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Forward</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

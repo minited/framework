@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Carousel Lightbox Variant</title>
+  <!--
+  Carousel Lightbox Variant
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/carousel.css
+  - css/components/lightbox.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/carousel.css" />
+  <link rel="stylesheet" href="css/components/lightbox.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <main id="main" class="container section stack">
+    <header class="section-header stack text-center">
+      <span class="section-header__eyebrow">Media</span>
+      <h1 class="section-header__title">Carousel Lightbox Variant</h1>
+      <p class="section-header__intro">This variant keeps the lean scrollbar carousel, but lets each image open in the existing lightbox component.</p>
+    </header>
+
+    <div class="carousel" aria-label="Example media carousel">
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media">
+                <button type="button" class="carousel__media-trigger" popovertarget="carousel-lb-1" aria-label="Open larger image of city skyline">
+                  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="City skyline at dusk"  loading="lazy" />
+                </button>
+              </figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide One</h2>
+                <p>Click the image to open a larger view in the lightbox.</p>
+                <cite><strong>City skyline at dusk</strong></cite>
+              </blockquote>
+            </div>
+            <dialog id="carousel-lb-1" class="lightbox" popover aria-label="Expanded city skyline image">
+              <button type="button" class="lightbox__close" popovertarget="carousel-lb-1" popovertargetaction="hide" aria-label="Close">✕</button>
+              <figure class="lightbox__figure">
+                <img class="lightbox__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1800&auto=format&fit=crop" alt="City skyline at dusk"  loading="lazy" />
+                <figcaption class="lightbox__caption">City skyline at dusk reflected across the water.</figcaption>
+              </figure>
+            </dialog>
+          </article>
+
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media">
+                <button type="button" class="carousel__media-trigger" popovertarget="carousel-lb-2" aria-label="Open larger image of forest path">
+                  <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1200&auto=format&fit=crop" alt="Forest path in soft morning light"  loading="lazy" />
+                </button>
+              </figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide Two</h2>
+                <p>The trigger pattern is the same lightbox syntax used elsewhere in the framework.</p>
+                <cite><strong>Forest path in soft morning light</strong></cite>
+              </blockquote>
+            </div>
+            <dialog id="carousel-lb-2" class="lightbox" popover aria-label="Expanded forest path image">
+              <button type="button" class="lightbox__close" popovertarget="carousel-lb-2" popovertargetaction="hide" aria-label="Close">✕</button>
+              <figure class="lightbox__figure">
+                <img class="lightbox__image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1800&auto=format&fit=crop" alt="Forest path in soft morning light"  loading="lazy" />
+                <figcaption class="lightbox__caption">A quiet forest path framed by dense trees and soft light.</figcaption>
+              </figure>
+            </dialog>
+          </article>
+
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media">
+                <button type="button" class="carousel__media-trigger" popovertarget="carousel-lb-3" aria-label="Open larger image of notebook and tools">
+                  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Notebook and tools on a desk"  loading="lazy" />
+                </button>
+              </figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide Three</h2>
+                <p>No extra carousel-lightbox CSS is needed because the existing lightbox styles are reused as-is.</p>
+                <cite><strong>Notebook and tools on a desk</strong></cite>
+              </blockquote>
+            </div>
+            <dialog id="carousel-lb-3" class="lightbox" popover aria-label="Expanded notebook and tools image">
+              <button type="button" class="lightbox__close" popovertarget="carousel-lb-3" popovertargetaction="hide" aria-label="Close">✕</button>
+              <figure class="lightbox__figure">
+                <img class="lightbox__image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1800&auto=format&fit=crop" alt="Notebook and tools on a desk"  loading="lazy" />
+                <figcaption class="lightbox__caption">Notebook and desk tools arranged in soft natural light.</figcaption>
+              </figure>
+            </dialog>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

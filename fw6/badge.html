@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Badge</title>
+  <!--
+  Badge
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Badge</span>
+      <h1 class="section-header__title">Badge component demo</h1>
+      <p class="section-header__intro">Small inline labels for categories, statuses, and counts. Combine modifiers freely.</p>
+    </header>
+
+    <section class="stack" aria-label="Semantic variants">
+      <h2 style="font-size: 1rem; font-weight: 700;">Semantic variants</h2>
+      <div class="cluster">
+        <span class="badge">Default</span>
+        <span class="badge badge--neutral">Neutral</span>
+        <span class="badge badge--accent">Accent</span>
+        <span class="badge badge--success">Success</span>
+        <span class="badge badge--warning">Warning</span>
+        <span class="badge badge--error">Error</span>
+        <span class="badge badge--info">Info</span>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Pill variants">
+      <h2 style="font-size: 1rem; font-weight: 700;">Pill shape <code style="font-size: 0.8rem; font-weight: 400;">.badge--pill</code></h2>
+      <div class="cluster">
+        <span class="badge badge--neutral badge--pill">Neutral</span>
+        <span class="badge badge--accent badge--pill">Accent</span>
+        <span class="badge badge--success badge--pill">Success</span>
+        <span class="badge badge--warning badge--pill">Warning</span>
+        <span class="badge badge--error badge--pill">Error</span>
+        <span class="badge badge--info badge--pill">Info</span>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Outline variants">
+      <h2 style="font-size: 1rem; font-weight: 700;">Outline <code style="font-size: 0.8rem; font-weight: 400;">.badge--outline</code></h2>
+      <div class="cluster">
+        <span class="badge badge--outline">Default</span>
+        <span class="badge badge--accent badge--outline">Accent</span>
+        <span class="badge badge--success badge--outline">Success</span>
+        <span class="badge badge--error badge--outline">Error</span>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Size variants">
+      <h2 style="font-size: 1rem; font-weight: 700;">Sizes</h2>
+      <div class="cluster" style="align-items: center;">
+        <span class="badge badge--accent badge--sm">Small</span>
+        <span class="badge badge--accent">Default</span>
+        <span class="badge badge--accent badge--lg">Large</span>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="In context">
+      <h2 style="font-size: 1rem; font-weight: 700;">In context</h2>
+      <div class="auto-grid" style="--min: 16rem;">
+        <div class="card stack" style="--stack-space: var(--space-4);">
+          <div class="cluster" style="justify-content: space-between;">
+            <strong>Project Alpha</strong>
+            <span class="badge badge--warning badge--pill">In Progress</span>
+          </div>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">Frontend redesign and component library build-out.</p>
+          <div class="cluster" style="gap: var(--space-2);">
+            <span class="badge badge--accent badge--sm">React</span>
+            <span class="badge badge--neutral badge--sm">CSS</span>
+            <span class="badge badge--neutral badge--sm">Figma</span>
+          </div>
+        </div>
+        <div class="card stack" style="--stack-space: var(--space-4);">
+          <div class="cluster" style="justify-content: space-between;">
+            <strong>API v3</strong>
+            <span class="badge badge--success badge--pill">Live</span>
+          </div>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">REST API rewrite with improved authentication.</p>
+          <div class="cluster" style="gap: var(--space-2);">
+            <span class="badge badge--neutral badge--sm">Node</span>
+            <span class="badge badge--neutral badge--sm">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="card stack" style="--stack-space: var(--space-4);">
+          <div class="cluster" style="justify-content: space-between;">
+            <strong>Mobile App</strong>
+            <span class="badge badge--info badge--pill">Review</span>
+          </div>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">iOS and Android app undergoing final QA pass.</p>
+          <div class="cluster" style="gap: var(--space-2);">
+            <span class="badge badge--neutral badge--sm">Swift</span>
+            <span class="badge badge--neutral badge--sm">Kotlin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
