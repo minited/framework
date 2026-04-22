@@ -1,0 +1,136 @@
+@layer components {
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--space-4);
+    padding: var(--space-16) var(--space-8);
+    color: var(--color-muted);
+  }
+
+  .empty-state__icon {
+    font-size: 3rem;
+    line-height: 1;
+    opacity: 0.45;
+  }
+
+  .empty-state__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .empty-state__message {
+    max-width: 38ch;
+    text-wrap: pretty;
+    font-size: 0.95rem;
+  }
+
+  .empty-state__actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-block-start: var(--space-2);
+  }
+
+  .spinner {
+    --spinner-size: 2rem;
+    --spinner-stroke: 3px;
+    --spinner-color: var(--color-accent);
+    display: inline-block;
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    border-radius: 50%;
+    border: var(--spinner-stroke) solid color-mix(in oklab, var(--spinner-color) 25%, transparent);
+    border-block-start-color: var(--spinner-color);
+    animation: spinner-spin 0.75s linear infinite;
+    flex-shrink: 0;
+  }
+
+  .spinner--sm { --spinner-size: 1rem;  --spinner-stroke: 2px; }
+  .spinner--lg { --spinner-size: 3.5rem; --spinner-stroke: 4px; }
+
+  @keyframes spinner-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner {
+      animation: none;
+      opacity: 0.5;
+    }
+  }
+
+  .loading-overlay {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .loading-overlay[aria-busy="true"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    border-radius: inherit;
+    background: color-mix(in oklab, var(--color-bg) 65%, transparent);
+    backdrop-filter: blur(2px);
+  }
+
+  .loading-overlay[aria-busy="true"]::before {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    z-index: 11;
+    width: 2rem;
+    height: 2rem;
+    margin: -1rem;
+    border-radius: 50%;
+    border: 3px solid color-mix(in oklab, var(--color-accent) 25%, transparent);
+    border-block-start-color: var(--color-accent);
+    animation: spinner-spin 0.75s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loading-overlay[aria-busy="true"]::before {
+      animation: none;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes skeleton-shimmer {
+    from { background-position: -200% 0; }
+    to   { background-position:  200% 0; }
+  }
+
+  .skeleton {
+    --_sk-base:  color-mix(in oklab, var(--color-elevated) 100%, transparent);
+    --_sk-shine: color-mix(in oklab, var(--color-elevated) 55%, var(--color-text) 45%);
+    display: block;
+    width: 100%;
+    height: 1.2rem;
+    border-radius: var(--radius);
+    background: linear-gradient(
+      90deg,
+      var(--_sk-base)  25%,
+      var(--_sk-shine) 50%,
+      var(--_sk-base)  75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton {
+      animation: none;
+      background: var(--_sk-base);
+    }
+  }
+
+  .skeleton--text    { height: 1em;    max-width: 80%; margin-block: 0.2em; }
+  .skeleton--heading { height: 1.6rem; max-width: 55%; }
+  .skeleton--avatar  { width: 2.5rem;  height: 2.5rem; border-radius: 50%; }
+  .skeleton--card    { height: 12rem; }
+}
