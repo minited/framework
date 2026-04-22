@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Shell — Filter + Results</title>
+  <!--
+  Shell — Filter Panel + Results layout
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/shell.css
+  - css/components/form.css
+  - css/components/form-extended.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/shell.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/form-extended.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+<div class="container section stack" style="--stack-space: var(--space-8);">
+
+  <header class="section-header stack">
+    <span class="section-header__eyebrow">Shell — Filter + Results variant</span>
+    <h1 class="section-header__title">Filter panel + results</h1>
+    <p class="section-header__intro">Sticky filter sidebar beside a scrollable results area. Override the filter width: <code>style="--filter-width: 300px"</code> on <code>.filter-results</code>.</p>
+  </header>
+
+  <div class="filter-results">
+
+    <!-- Filter panel -->
+    <aside class="filter-results__panel stack" aria-label="Filter options">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <strong style="font-size: 0.9rem;">Filters</strong>
+        <button style="font-size: 0.8rem; color: var(--color-accent); background: none; border: none; cursor: pointer;">Reset</button>
+      </div>
+
+      <fieldset class="radio-group" style="border: none; padding: 0;">
+        <legend class="radio-group__legend" style="font-size: 0.82rem;">Category</legend>
+        <div class="stack" style="--stack-space: var(--space-4);">
+          <label class="radio"><input class="radio__control" type="radio" name="cat" checked /><span style="font-size: 0.88rem;">All</span></label>
+          <label class="radio"><input class="radio__control" type="radio" name="cat" /><span style="font-size: 0.88rem;">Web Dev</span></label>
+          <label class="radio"><input class="radio__control" type="radio" name="cat" /><span style="font-size: 0.88rem;">Design</span></label>
+          <label class="radio"><input class="radio__control" type="radio" name="cat" /><span style="font-size: 0.88rem;">UX Research</span></label>
+        </div>
+      </fieldset>
+
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+
+      <fieldset style="border: none; padding: 0; margin: 0;">
+        <legend style="font-weight: 600; font-size: 0.82rem; display: block; margin-block-end: var(--space-4);">Level</legend>
+        <div class="stack" style="--stack-space: var(--space-4);">
+          <label class="checkbox"><input class="checkbox__control" type="checkbox" checked /><span style="font-size: 0.88rem;">Beginner</span></label>
+          <label class="checkbox"><input class="checkbox__control" type="checkbox" /><span style="font-size: 0.88rem;">Intermediate</span></label>
+          <label class="checkbox"><input class="checkbox__control" type="checkbox" /><span style="font-size: 0.88rem;">Advanced</span></label>
+        </div>
+      </fieldset>
+
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+
+      <label class="toggle" style="gap: var(--space-4);">
+        <input class="toggle__control" type="checkbox" role="switch" />
+        <span style="font-size: 0.88rem;">Free only</span>
+      </label>
+    </aside>
+
+    <!-- Results -->
+    <section class="filter-results__results stack" style="--stack-space: var(--space-4);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+        <p style="font-size: 0.88rem; color: var(--color-muted);"><strong style="color: var(--color-text);">24 results</strong> found</p>
+        <select class="form__select" style="width: auto; padding-block: 0.5rem; font-size: 0.88rem;" aria-label="Sort by">
+          <option>Relevance</option>
+          <option>Most popular</option>
+          <option>Newest</option>
+        </select>
+      </div>
+
+      <div class="card cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 700; font-size: 0.95rem;">Modern CSS — From Zero to Framework</div>
+          <div style="font-size: 0.82rem; color: var(--color-muted); margin-block-start: var(--space-2);">Maya Chen · 8.5h · 4.9 ★</div>
+          <div class="cluster" style="gap: var(--space-2); margin-block-start: var(--space-4);">
+            <span class="badge badge--accent">Web Dev</span>
+            <span class="badge badge--neutral">Beginner</span>
+            <span class="badge badge--success badge--pill">Free</span>
+          </div>
+        </div>
+        <a class="btn btn--primary" href="#" style="align-self: center; white-space: nowrap;">Enrol free</a>
+      </div>
+
+      <div class="card cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 700; font-size: 0.95rem;">Advanced Layout Patterns with CSS Grid</div>
+          <div style="font-size: 0.82rem; color: var(--color-muted); margin-block-start: var(--space-2);">Luca Bianchi · 5h · 4.7 ★</div>
+          <div class="cluster" style="gap: var(--space-2); margin-block-start: var(--space-4);">
+            <span class="badge badge--accent">Web Dev</span>
+            <span class="badge badge--neutral">Intermediate</span>
+          </div>
+        </div>
+        <a class="btn btn--primary" href="#" style="align-self: center; white-space: nowrap;">$29</a>
+      </div>
+
+      <div class="card cluster" style="justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+        <div style="flex: 1; min-width: 200px;">
+          <div style="font-weight: 700; font-size: 0.95rem;">Design Systems with CSS Custom Properties</div>
+          <div style="font-size: 0.82rem; color: var(--color-muted); margin-block-start: var(--space-2);">Priya Nair · 11h · 4.8 ★</div>
+          <div class="cluster" style="gap: var(--space-2); margin-block-start: var(--space-4);">
+            <span class="badge badge--accent">Web Dev</span>
+            <span class="badge badge--info">Design</span>
+          </div>
+        </div>
+        <a class="btn btn--primary" href="#" style="align-self: center; white-space: nowrap;">$49</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</body>
+</html>

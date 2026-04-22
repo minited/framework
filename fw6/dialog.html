@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Dialog</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/dialog.css" />
+  <link rel="stylesheet" href="css/components/alert.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Dialog</span>
+      <h1 class="section-header__title">Dialog / modal component demo</h1>
+      <p class="section-header__intro">Uses the Popover API — no JavaScript required. Open with <code>popovertarget</code>, close with <code>popovertargetaction="hide"</code>. Clicking the backdrop or pressing Escape also closes.</p>
+    </header>
+
+    <section class="stack" aria-label="Dialog triggers">
+      <h2 style="font-size: 1rem; font-weight: 700;">Sizes</h2>
+      <div class="cluster">
+        <button class="btn btn--secondary" popovertarget="modal-sm">Small modal</button>
+        <button class="btn btn--secondary" popovertarget="modal-default">Default modal</button>
+        <button class="btn btn--secondary" popovertarget="modal-lg">Large modal</button>
+        <button class="btn btn--secondary" popovertarget="modal-confirm">Confirmation</button>
+        <button class="btn btn--primary"   popovertarget="modal-form">Form modal</button>
+      </div>
+    </section>
+
+    <section class="stack" aria-label="Usage notes">
+      <h2 style="font-size: 1rem; font-weight: 700;">Usage notes</h2>
+      <ul class="stack" style="--stack-space: var(--space-2); color: var(--color-muted); font-size: 0.9rem; list-style: disc; padding-inline-start: 1.5rem;">
+        <li>Add <code>popover</code> to any element to make it a modal. Wire a trigger with <code>popovertarget="id"</code>.</li>
+        <li>Close buttons use <code>popovertarget="id" popovertargetaction="hide"</code> — no JavaScript.</li>
+        <li>Clicking the backdrop (outside the modal) or pressing <kbd>Escape</kbd> dismisses automatically.</li>
+        <li>Size variants: <code>.modal--sm</code> (360px), default (540px), <code>.modal--lg</code> (780px), <code>.modal--full</code>.</li>
+        <li>The Popover API does not trap focus. Add a JS focus-trap utility if needed for complex forms.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Small -->
+  <div class="modal modal--sm" id="modal-sm" popover>
+    <header class="modal__header">
+      <h2 class="modal__title">Small modal</h2>
+      <button class="modal__close" popovertarget="modal-sm" popovertargetaction="hide" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body"><p>This is a small modal — <code>--modal-width: 360px</code>. Good for short confirmations or alerts.</p></div>
+    <footer class="modal__footer">
+      <button class="btn btn--primary" popovertarget="modal-sm" popovertargetaction="hide">Got it</button>
+    </footer>
+  </div>
+
+  <!-- Default -->
+  <div class="modal" id="modal-default" popover>
+    <header class="modal__header">
+      <h2 class="modal__title">Default modal</h2>
+      <button class="modal__close" popovertarget="modal-default" popovertargetaction="hide" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body stack">
+      <p>Default width is 540px. The body scrolls independently when content overflows.</p>
+      <p style="color: var(--color-muted); font-size: 0.9rem;">The header and footer stay fixed while the body scrolls.</p>
+    </div>
+    <footer class="modal__footer">
+      <button class="btn btn--secondary" popovertarget="modal-default" popovertargetaction="hide">Cancel</button>
+      <button class="btn btn--primary"   popovertarget="modal-default" popovertargetaction="hide">Confirm</button>
+    </footer>
+  </div>
+
+  <!-- Large -->
+  <div class="modal modal--lg" id="modal-lg" popover>
+    <header class="modal__header">
+      <h2 class="modal__title">Large modal</h2>
+      <button class="modal__close" popovertarget="modal-lg" popovertargetaction="hide" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body stack">
+      <p>Large modal — <code>--modal-width: 780px</code>. Use for complex content, data tables, or media previews.</p>
+      <p style="color: var(--color-muted); font-size: 0.9rem;">Override width directly: <code>style="--modal-width: 1000px"</code> on the element.</p>
+    </div>
+    <footer class="modal__footer">
+      <button class="btn btn--secondary" popovertarget="modal-lg" popovertargetaction="hide">Close</button>
+    </footer>
+  </div>
+
+  <!-- Confirmation -->
+  <div class="modal modal--sm" id="modal-confirm" popover>
+    <header class="modal__header">
+      <h2 class="modal__title">Delete project?</h2>
+      <button class="modal__close" popovertarget="modal-confirm" popovertargetaction="hide" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body stack">
+      <p>This will permanently delete <strong>Project Alpha</strong> and all associated files. This cannot be undone.</p>
+      <div class="alert alert--error" role="alert">
+        <span class="alert__icon">⚠</span>
+        <div class="alert__body">
+          <div class="alert__message">14 files and 3 collaborators will lose access immediately.</div>
+        </div>
+      </div>
+    </div>
+    <footer class="modal__footer">
+      <button class="btn btn--secondary" popovertarget="modal-confirm" popovertargetaction="hide">Cancel</button>
+      <button class="btn btn--primary" style="background: var(--color-error); border-color: var(--color-error);"
+              popovertarget="modal-confirm" popovertargetaction="hide">Delete project</button>
+    </footer>
+  </div>
+
+  <!-- Form modal -->
+  <div class="modal" id="modal-form" popover>
+    <header class="modal__header">
+      <h2 class="modal__title">Invite team member</h2>
+      <button class="modal__close" popovertarget="modal-form" popovertargetaction="hide" aria-label="Close">✕</button>
+    </header>
+    <div class="modal__body">
+      <div class="form stack">
+        <div class="form__field stack">
+          <label class="form__label" for="invite-email">Email address</label>
+          <input class="form__input" id="invite-email" type="email" placeholder="colleague@example.com" />
+          <p class="form__help">They'll receive an invitation link by email.</p>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="invite-role">Role</label>
+          <select class="form__select" id="invite-role">
+            <option>Viewer</option>
+            <option selected>Editor</option>
+            <option>Admin</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <footer class="modal__footer">
+      <button class="btn btn--secondary" popovertarget="modal-form" popovertargetaction="hide">Cancel</button>
+      <button class="btn btn--primary"   popovertarget="modal-form" popovertargetaction="hide">Send invite</button>
+    </footer>
+  </div>
+
+</body>
+</html>

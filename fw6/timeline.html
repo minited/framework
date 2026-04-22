@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Timeline</title>
+  <!--
+  Timeline / Activity Feed
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/timeline.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/timeline.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Timeline</span>
+      <h1 class="section-header__title">Timeline component demo</h1>
+      <p class="section-header__intro">Vertical activity feeds. Use semantic dot colours to convey event type at a glance.</p>
+    </header>
+
+    <div class="auto-grid" style="--min: 24rem;">
+
+      <!-- Basic activity feed -->
+      <section class="card stack" style="--stack-space: var(--space-6);">
+        <strong>Activity feed</strong>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--success"></span>
+            <time class="timeline__time">2 min ago</time>
+            <p class="timeline__title">Deployment successful</p>
+            <p class="timeline__body">v2.4.1 deployed to production with zero downtime.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--accent"></span>
+            <time class="timeline__time">1 hour ago</time>
+            <p class="timeline__title">New user registered</p>
+            <p class="timeline__body">sarah@example.com joined the workspace.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--warning"></span>
+            <time class="timeline__time">3 hours ago</time>
+            <p class="timeline__title">Storage at 80%</p>
+            <p class="timeline__body">Consider upgrading your plan or removing old files.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--error"></span>
+            <time class="timeline__time">Yesterday</time>
+            <p class="timeline__title">Build failed</p>
+            <p class="timeline__body">Pipeline failed on the lint step — fixed in commit a3f8c.</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <time class="timeline__time">April 18</time>
+            <p class="timeline__title">Weekly report generated</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Card variant -->
+      <section class="card stack" style="--stack-space: var(--space-6);">
+        <strong>Card variant</strong>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--accent"></span>
+            <time class="timeline__time">Today</time>
+            <p class="timeline__title">Midterm project submitted</p>
+            <div class="timeline__card">
+              <p style="font-size: 0.88rem; color: var(--color-muted);">WEB-201 · Responsive Portfolio Site</p>
+              <div style="margin-block-start: var(--space-2);">
+                <span class="badge badge--info badge--pill">Awaiting grade</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--success"></span>
+            <time class="timeline__time">April 14</time>
+            <p class="timeline__title">Lab 3 graded</p>
+            <div class="timeline__card">
+              <p style="font-size: 0.88rem; color: var(--color-muted);">WEB-201 · Flexbox layout</p>
+              <div style="margin-block-start: var(--space-2);">
+                <span class="badge badge--success badge--pill">92 / 100</span>
+              </div>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--warning"></span>
+            <time class="timeline__time">April 10</time>
+            <p class="timeline__title">Assignment overdue notice</p>
+            <div class="timeline__card">
+              <p style="font-size: 0.88rem; color: var(--color-muted);">DSN-310 · Brand audit — submitted 1 day late (–5 pts)</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <time class="timeline__time">April 7</time>
+            <p class="timeline__title">Enrolled in WEB-201</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- All dot colours -->
+      <section class="card stack" style="--stack-space: var(--space-6);">
+        <strong>Dot colour reference</strong>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <p class="timeline__title">Default (neutral)</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--accent"></span>
+            <p class="timeline__title"><code>.timeline__dot--accent</code></p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--success"></span>
+            <p class="timeline__title"><code>.timeline__dot--success</code></p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--warning"></span>
+            <p class="timeline__title"><code>.timeline__dot--warning</code></p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--error"></span>
+            <p class="timeline__title"><code>.timeline__dot--error</code></p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--info"></span>
+            <p class="timeline__title"><code>.timeline__dot--info</code></p>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </main>
+</body>
+</html>
