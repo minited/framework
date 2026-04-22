@@ -1,0 +1,175 @@
+@layer components {
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+    border-block-end: 1px solid var(--color-border);
+    border-inline-end: 1px solid var(--color-border);
+    vertical-align: middle;
+  }
+
+  .comparison-table th:last-child,
+  .comparison-table td:last-child {
+    border-inline-end: none;
+  }
+
+  .comparison-table tbody tr:last-child td {
+    border-block-end: none;
+  }
+
+  .comparison-table__feature {
+    text-align: start;
+    font-weight: 500;
+    color: var(--color-muted);
+    background: var(--color-surface);
+    white-space: nowrap;
+  }
+
+  .comparison-table thead th {
+    background: var(--color-elevated);
+    font-weight: 700;
+    border-block-end: 2px solid var(--color-border);
+  }
+
+  .comparison-table thead th:first-child {
+    text-align: start;
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .comparison-table tbody tr:hover td:not(.comparison-table__highlight) {
+    background: color-mix(in oklab, var(--color-surface) 60%, var(--color-elevated));
+  }
+
+  .comparison-table__highlight-head {
+    background: color-mix(in oklab, var(--color-accent) 16%, var(--color-elevated));
+    border-inline: 2px solid var(--color-accent) !important;
+    border-block-start: 2px solid var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .comparison-table__highlight {
+    background: color-mix(in oklab, var(--color-accent) 7%, var(--color-surface));
+    border-inline: 2px solid var(--color-accent) !important;
+  }
+
+  .comparison-table__check { color: var(--color-success); font-weight: 700; }
+  .comparison-table__cross { color: var(--color-muted);   opacity: 0.5; }
+
+  .pricing-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .pricing-card--featured {
+    border: 2px solid var(--color-accent);
+    background: color-mix(in oklab, var(--color-accent) 6%, var(--color-surface));
+  }
+
+  .pricing-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .pricing-card__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .pricing-card__desc {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin-block-start: var(--space-2);
+  }
+
+  .pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.15rem;
+    margin-block: var(--space-2);
+  }
+
+  .pricing-card__currency {
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding-block-start: 0.35rem;
+    align-self: flex-start;
+  }
+
+  .pricing-card__amount {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .pricing-card__period {
+    color: var(--color-muted);
+    font-size: 0.88rem;
+    align-self: flex-end;
+    padding-block-end: 0.2rem;
+  }
+
+  .pricing-card__divider {
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  .pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    flex: 1;
+  }
+
+  .pricing-card__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  .pricing-card__feature::before {
+    content: "✓";
+    color: var(--color-success);
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1.5;
+  }
+
+  .pricing-card__feature--unavailable {
+    opacity: 0.4;
+  }
+
+  .pricing-card__feature--unavailable::before {
+    content: "–";
+    color: var(--color-muted);
+  }
+
+  .pricing-card__cta {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
