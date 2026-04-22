@@ -1,0 +1,119 @@
+/*
+  Optional project overrides.
+
+  Use this file in one of two ways:
+  - copy a commented example and adapt it, or
+  - uncomment a value or rule here to override the default framework styles
+
+  Keep examples commented until you want to use them in a project.
+*/
+
+@layer tokens {
+  :root {
+    /*
+      Common token overrides.
+      Uncomment only the values you want to change.
+
+      Spacing (--space-unit scales all --space-* values)
+      --space-unit: 0.25rem;
+
+      Layout
+      --container-max: 72rem;
+      --content-max: 68ch;
+      --hero-content-max: 52rem;
+      --max-w-narrow: 52rem;
+
+      Radii
+      --radius: 14px;
+      --radius-lg: 22px;
+
+      Core colors
+      --color-bg: #0b1020;
+      --color-text: #e5e7eb;
+      --color-accent-seed: #8b5cf6;
+      --color-accent: #8b5cf6;
+      --color-on-accent: #ffffff;
+      --color-surface: #111827;
+      --color-elevated: #1f2937;
+      --color-muted: rgb(229 231 235 / 0.72);
+      --color-border: rgb(229 231 235 / 0.18);
+      --color-backdrop: rgb(0 0 0 / 0.85);
+
+      Hero
+      --hero-text: #ffffff;
+      --hero-muted: rgb(255 255 255 / 0.92);
+      --hero-overlay: rgb(8 15 35 / 0.6);
+      --hero-text-shadow: 0 2px 6px rgb(0 0 0 / 0.55), 0 10px 30px rgb(0 0 0 / 0.4);
+
+      Nav / drawer
+      --nav-height: 64px;
+      --drawer-width: min(86vw, 320px);
+
+      Motion
+      --transition-fast: 0.2s ease;
+      --transition-base: 0.3s ease;
+
+      Carousel
+      --carousel-control-size: 44px;
+    */
+  }
+}
+
+@layer components {
+  /*
+    Optional component overrides.
+
+    .page-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .page-lead {
+      font-size: 1.1rem;
+      max-width: 62ch;
+      margin-inline: auto;
+      color: var(--color-muted);
+    }
+
+    .hero {
+      min-height: 68vh;
+    }
+
+    .hero--fullbleed {
+      border-radius: 0;
+    }
+
+    .card {
+      background: color-mix(in oklab, var(--color-surface) 92%, var(--color-accent) 8%);
+    }
+
+    .section-header__title {
+      max-width: clamp(18ch, 50vw, 32rem);
+    }
+
+    .site-header {
+      background: color-mix(in oklab, var(--color-elevated) 92%, var(--color-accent) 8%);
+    }
+
+    .site-nav__link--cta {
+      font-weight: 700;
+    }
+
+    .site-footer__title {
+      font-size: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+  */
+}
+
+@layer utilities {
+  /*
+    Utility example.
+
+    .demo-outline {
+      outline: 1px dashed color-mix(in oklab, var(--color-accent) 45%, transparent);
+      outline-offset: 4px;
+    }
+  */
+}
