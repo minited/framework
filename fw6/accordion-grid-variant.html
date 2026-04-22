@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Accordion Grid Variant</title>
+  <!--
+  Accordion Grid Variant
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/accordion.css
+  - css/components/accordion-grid-addon.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/accordion.css" />
+  <link rel="stylesheet" href="css/components/accordion-grid-addon.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">FAQ</span>
+      <h1 class="section-header__title">Accordion grid variant</h1>
+      <p class="section-header__intro">This variant keeps the older wrapper-based grid animation as an optional add-on.</p>
+    </header>
+
+    <details class="accordion accordion--grid">
+      <summary class="accordion__summary">Do I need JavaScript?</summary>
+      <div class="accordion__panel">
+        <div class="accordion__content">Only for the carousel controls.</div>
+      </div>
+    </details>
+
+    <details class="accordion accordion--grid">
+      <summary class="accordion__summary">Why use CSS Variables?</summary>
+      <div class="accordion__panel">
+        <div class="accordion__content">Change one value to update the whole system.</div>
+      </div>
+    </details>
+  </main>
+</body>
+</html>

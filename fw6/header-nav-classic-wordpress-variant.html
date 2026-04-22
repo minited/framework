@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Header Nav Classic WordPress Variant</title>
+  <!--
+  Header Nav Classic WordPress Variant
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/header-nav.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <header class="site-header drawer-right">
+    <div class="site-header__inner container">
+      <a href="/" rel="home" class="site-header__brand">My Site</a>
+      <button type="button" class="site-header__toggle" popovertarget="site-nav" aria-label="Open menu">
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" popover aria-label="Main navigation">
+        <div class="custom-menu-class">
+          <ul class="menu">
+            <li class="menu-item"><a href="#">Mother Plants</a></li>
+            <li class="menu-item"><a href="#">Users</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container section stack">
+    <h1>Fixed desktop nav classic WordPress example</h1>
+    <p class="text-muted">Classic WordPress wrapper and ul.menu structure.</p>
+  </main>
+</body>
+</html>

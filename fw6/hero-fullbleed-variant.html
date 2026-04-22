@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Hero Full-Bleed Variant</title>
+  <!--
+  Hero Full-Bleed Variant
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/hero.css
+  - css/custom.css
+  -->
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <main id="main">
+    <section class="section">
+      <figure class="hero hero--fullbleed">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1800&auto=format&fit=crop"
+          alt="A modern workspace"
+          class="hero__bg"
+         
+          decoding="async"
+          fetchpriority="high"
+        />
+
+        <figcaption class="hero__content stack">
+          <p>Full-bleed hero sample</p>
+          <h1 class="hero__title page-title">This hero stretches edge to edge.</h1>
+          <p class="hero__subtitle page-lead">
+            The hero sits outside the container, while the text inside it still aligns to the normal container width.
+          </p>
+
+          <div class="cluster justify-center">
+            <a href="#" class="btn btn--primary">Primary Action</a>
+            <a href="#" class="btn btn--secondary">Secondary Action</a>
+          </div>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="container section stack">
+      <h2>Below the hero</h2>
+      <p>This content returns to the normal contained page layout.</p>
+    </section>
+  </main>
+</body>
+</html>
