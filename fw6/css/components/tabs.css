@@ -1,0 +1,54 @@
+@layer components {
+  .tabs { --tab-indicator: var(--color-accent); }
+
+  .tabs__list {
+    display: flex;
+    gap: 0;
+    border-block-end: 1px solid var(--color-border);
+    flex-wrap: wrap;
+  }
+
+  .tabs__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tabs__label {
+    display: inline-block;
+    padding: 0.75rem 1.1rem;
+    cursor: pointer;
+    color: var(--color-muted);
+    border-block-end: 2px solid transparent;
+    margin-block-end: -1px;
+    font-weight: 600;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .tabs__label:hover { color: var(--color-text); }
+
+  .tabs__input:focus-visible + .tabs__label {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
+  .tabs__input:checked + .tabs__label {
+    color: var(--color-text);
+    border-block-end-color: var(--tab-indicator);
+  }
+
+  .tabs__panel {
+    display: none;
+    padding-block-start: var(--space-6);
+  }
+
+  .tabs:has(#tab-1:checked) #panel-1,
+  .tabs:has(#tab-2:checked) #panel-2,
+  .tabs:has(#tab-3:checked) #panel-3,
+  .tabs:has(#tab-4:checked) #panel-4,
+  .tabs:has(#tab-5:checked) #panel-5,
+  .tabs:has(#tab-6:checked) #panel-6 {
+    display: block;
+  }
+}

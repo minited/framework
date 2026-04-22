@@ -1,0 +1,68 @@
+@layer components {
+  .alert {
+    --_alert-color: var(--color-info);
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius);
+    border: 1px solid color-mix(in oklab, var(--_alert-color) 40%, transparent);
+    background: color-mix(in oklab, var(--_alert-color) 10%, var(--color-bg));
+  }
+
+  .alert--success { --_alert-color: var(--color-success); }
+  .alert--warning { --_alert-color: var(--color-warning); }
+  .alert--error   { --_alert-color: var(--color-error); }
+  .alert--info    { --_alert-color: var(--color-info); }
+
+  .alert--banner {
+    border-radius: 0;
+    border-inline: none;
+  }
+
+  .alert__icon {
+    flex-shrink: 0;
+    color: var(--_alert-color);
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .alert__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .alert__title {
+    font-weight: 700;
+    color: var(--_alert-color);
+    margin-block-end: 0.2rem;
+  }
+
+  .alert__message {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  .alert__close {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.2rem 0.35rem;
+    border-radius: var(--radius);
+    align-self: flex-start;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .alert__close:hover {
+    color: var(--color-text);
+    background: color-mix(in oklab, var(--_alert-color) 12%, transparent);
+  }
+
+  /* Dismissible alert — pure CSS via a sibling checkbox. */
+  .alert-dismiss { display: none; }
+  .alert-dismiss:checked ~ .alert { display: none; }
+}

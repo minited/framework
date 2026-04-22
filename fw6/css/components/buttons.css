@@ -1,0 +1,63 @@
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .btn--primary {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border-color: color-mix(in oklab, var(--color-accent) 62%, var(--color-text) 38%);
+  }
+
+  .btn--primary:hover {
+    background: color-mix(in oklab, var(--color-accent) 88%, var(--color-text) 12%);
+    border-color: color-mix(in oklab, var(--color-accent) 54%, var(--color-text) 46%);
+  }
+
+  .btn--secondary {
+    background: color-mix(in oklab, var(--color-surface) 86%, var(--color-text) 14%);
+    color: var(--color-text);
+    border-color: color-mix(in oklab, var(--color-surface) 55%, var(--color-text) 45%);
+    backdrop-filter: blur(2px);
+  }
+
+  .btn--secondary:hover {
+    background: color-mix(in oklab, var(--color-surface) 78%, var(--color-text) 22%);
+  }
+
+  .btn--ghost {
+    background: transparent;
+    color: var(--color-text);
+    border-color: transparent;
+  }
+
+  .btn--ghost:hover {
+    background: color-mix(in oklab, var(--color-text) 10%, transparent);
+  }
+
+  .btn--danger {
+    background: var(--color-error);
+    color: var(--color-bg);
+    border-color: color-mix(in oklab, var(--color-error) 62%, var(--color-bg) 38%);
+  }
+
+  .btn--danger:hover {
+    background: color-mix(in oklab, var(--color-error) 88%, var(--color-bg) 12%);
+  }
+}

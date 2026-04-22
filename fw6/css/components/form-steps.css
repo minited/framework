@@ -1,0 +1,50 @@
+@layer components {
+  .form-panel { display: none; }
+  .form-panel:target { display: block; }
+
+  body:not(:has(.form-panel:target)) #p-1 { display: block; }
+
+  body:not(:has(.form-panel:target)) #ms-ind-1 .form-step__indicator,
+  body:has(#p-1:target) #ms-ind-1 .form-step__indicator,
+  body:has(#p-2:target) #ms-ind-2 .form-step__indicator,
+  body:has(#p-3:target) #ms-ind-3 .form-step__indicator {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  body:not(:has(.form-panel:target)) #ms-ind-1 .form-step__label,
+  body:has(#p-1:target) #ms-ind-1 .form-step__label,
+  body:has(#p-2:target) #ms-ind-2 .form-step__label,
+  body:has(#p-3:target) #ms-ind-3 .form-step__label {
+    color: var(--color-accent);
+  }
+
+  body:has(#p-2:target) #ms-ind-1 .form-step__indicator,
+  body:has(#p-3:target) #ms-ind-1 .form-step__indicator,
+  body:has(#p-3:target) #ms-ind-2 .form-step__indicator {
+    background: var(--color-success);
+    border-color: var(--color-success);
+    font-size: 0;
+  }
+
+  body:has(#p-2:target) #ms-ind-1 .form-step__indicator::after,
+  body:has(#p-3:target) #ms-ind-1 .form-step__indicator::after,
+  body:has(#p-3:target) #ms-ind-2 .form-step__indicator::after {
+    content: "✓";
+    font-size: 0.82rem;
+    color: var(--color-bg);
+  }
+
+  body:has(#p-2:target) #ms-ind-1 .form-step__label,
+  body:has(#p-3:target) #ms-ind-1 .form-step__label,
+  body:has(#p-3:target) #ms-ind-2 .form-step__label {
+    color: var(--color-success);
+  }
+
+  body:has(#p-2:target) #ms-ind-1::after,
+  body:has(#p-3:target) #ms-ind-1::after,
+  body:has(#p-3:target) #ms-ind-2::after {
+    background: var(--color-success);
+  }
+}

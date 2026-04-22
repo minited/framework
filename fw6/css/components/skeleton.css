@@ -1,0 +1,37 @@
+@layer components {
+  .skeleton {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      var(--color-surface) 0%,
+      var(--color-elevated) 50%,
+      var(--color-surface) 100%
+    );
+    background-size: 200% 100%;
+    border-radius: var(--radius);
+    animation: skeleton-shimmer 1.4s linear infinite;
+  }
+
+  .skeleton--text    { height: 0.9rem; width: 100%; margin-block: 0.35rem; }
+  .skeleton--title   { height: 1.4rem; width: 60%; }
+  .skeleton--avatar  { height: 2.5rem; width: 2.5rem; border-radius: 9999px; }
+  .skeleton--thumb   { height: 8rem; width: 100%; }
+  .skeleton--button  { height: 2.5rem; width: 8rem; }
+
+  .skeleton--w-40 { width: 40%; }
+  .skeleton--w-55 { width: 55%; }
+  .skeleton--w-60 { width: 60%; }
+  .skeleton--w-70 { width: 70%; }
+  .skeleton--w-75 { width: 75%; }
+  .skeleton--w-80 { width: 80%; }
+  .skeleton--w-90 { width: 90%; }
+
+  @keyframes skeleton-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton { animation: none; }
+  }
+}
