@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Template Showcase</title>
+  <!--
+  Template Showcase
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/header-nav.css
+  - css/components/hero.css
+  - css/components/prose.css
+  - css/components/form.css
+  - css/components/accordion.css
+  - css/components/carousel.css
+  - css/components/gallery.css
+  - css/components/lightbox.css
+  - css/components/site-footer.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/components/hero.css" />
+  <link rel="stylesheet" href="css/components/prose.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/accordion.css" />
+  <link rel="stylesheet" href="css/components/carousel.css" />  
+  <link rel="stylesheet" href="css/components/gallery.css" />
+  <link rel="stylesheet" href="css/components/lightbox.css" />
+  <link rel="stylesheet" href="css/components/site-footer.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header drawer-right">
+    <div class="site-header__inner container">
+      <a href="#" class="site-header__brand">Agency.io</a>
+      <button type="button" class="site-header__toggle" popovertarget="site-nav" aria-label="Open menu">
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" popover aria-label="Main navigation">
+        <a href="#hero" class="site-nav__link">Home</a>
+        <a href="#content" class="site-nav__link">Content</a>
+        <a href="#work" class="site-nav__link">Work</a>
+        <a href="#fractions" class="site-nav__link">Fractions</a>
+        <a href="#testimonials" class="site-nav__link">Reviews</a>
+        <a href="#gallery" class="site-nav__link">Gallery</a>
+        <a href="#contact" class="site-nav__link">Contact</a>
+        <a href="#faq" class="site-nav__link">FAQ</a>
+        <a href="#" class="site-nav__link site-nav__link--cta">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="container section">
+      <figure class="hero">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="A modern workspace" class="hero__bg" decoding="async" fetchpriority="high" />
+        <figcaption class="hero__content stack">
+          <h1 class="hero__title page-title">Design Systems that Scale.</h1>
+          <p class="hero__subtitle page-lead">Build faster, cleaner, and more accessible interfaces.</p>
+          <nav class="cluster justify-center" aria-label="Hero actions">
+            <a href="#content" class="btn btn--primary">Explore the System</a>
+            <a href="#contact" class="btn btn--secondary">Contact Us</a>
+          </nav>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="content" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Content</span>
+        <h2 class="section-header__title">Readable content should be a first-class citizen.</h2>
+        <p class="section-header__intro">This full demo page loads every component file. The component-specific examples load only what they need.</p>
+      </header>
+
+      <article class="prose">
+        <p>This modular version lets you include only the files a page actually needs.</p>
+        <p>Strong frameworks are not only about flashy components. They are also about consistency, clarity, and reducing the number of one-off layout decisions you have to make.</p>
+        <blockquote>Use the example HTML files as pairing guides.</blockquote>
+        <ul>
+          <li>Clear spacing scale</li>
+          <li>Predictable layout primitives</li>
+          <li>Semantic component names</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="work" class="container section stack">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Layouts</span>
+        <h2 class="section-header__title">Build with explicit columns or flexible fractions.</h2>
+        <p class="section-header__intro">Use <code>.auto-grid</code> when you want cards to fill the available space, and use <code>.grid</code> with custom properties when you know the exact column pattern you want.</p>
+      </header>
+
+      <ul class="auto-grid" style="--min: 16rem;">
+        <li class="card stack">
+          <h3>Project Alpha</h3>
+          <p class="text-muted">Responsive cards via auto-grid with a minimum card width.</p>
+        </li>
+        <li class="card stack">
+          <h3>Project Beta</h3>
+          <p class="text-muted">Auto-fits columns based on available space.</p>
+        </li>
+        <li class="card stack">
+          <h3>Project Gamma</h3>
+          <p class="text-muted">Pure CSS layout, no scripts required.</p>
+        </li>
+        <li class="card stack">
+          <h3>Project Delta</h3>
+          <p class="text-muted">Tweak card width with a single custom property.</p>
+        </li>
+      </ul>
+
+      <ul class="grid" style="--cols: 1; --cols-md: 2; --cols-lg: 4;">
+        <li class="card stack">
+          <h3>Columns</h3>
+          <p class="text-muted">Control columns directly with grid variables.</p>
+        </li>
+        <li class="card stack">
+          <h3>Fractions</h3>
+          <p class="text-muted">Use explicit column counts for predictable card layouts.</p>
+        </li>
+        <li class="card stack">
+          <h3>Composable</h3>
+          <p class="text-muted">Mix explicit and auto-fit grids as needed.</p>
+        </li>
+        <li class="card stack">
+          <h3>Portable</h3>
+          <p class="text-muted">Great for client builds and classroom demos.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="fractions" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Fractions</span>
+        <h2 class="section-header__title">Use fractional columns when equal widths are not enough.</h2>
+        <p class="section-header__intro">This example becomes <code>1fr 2fr 1fr</code> on large screens, so the middle card gets twice as much space.</p>
+      </header>
+
+      <ul class="grid" style="--grid-cols: 1fr; --grid-cols-md: 1fr 1fr; --grid-cols-lg: 1fr 2fr 1fr;">
+        <li class="card stack">
+          <h3>Sidebar</h3>
+          <p class="text-muted">A narrower column for supporting content.</p>
+        </li>
+        <li class="card stack">
+          <h3>Main Feature</h3>
+          <p class="text-muted">This middle column uses <code>2fr</code>, so it takes up twice as much space as the side columns.</p>
+          <p class="text-muted">This is useful for layouts with a dominant content area and smaller supporting panels.</p>
+        </li>
+        <li class="card stack">
+          <h3>Meta Panel</h3>
+          <p class="text-muted">Another narrower column for secondary information.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="testimonials" class="container section">
+      <header class="section-header stack text-center">
+        <span class="section-header__eyebrow">Testimonials</span>
+        <h2 class="section-header__title">What Students Say</h2>
+      </header>
+
+      <div class="carousel" aria-label="Student reviews carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <article class="carousel__slide">
+              <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+                <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=31" alt="Student work"  loading="lazy" /></figure>
+                <blockquote class="carousel__copy stack">
+                  <h3>Slide One</h3>
+                  <p>Learning <code>@layer</code> was the single biggest unlock of my career.</p>
+                  <cite><strong>Jamie Okonkwo</strong><br />Front-End Developer</cite>
+                </blockquote>
+              </div>
+            </article>
+            <article class="carousel__slide">
+              <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+                <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=32" alt="UX work"  loading="lazy" /></figure>
+                <blockquote class="carousel__copy stack">
+                  <h3>Slide Two</h3>
+                  <p>Container-aware thinking changed how I design components.</p>
+                  <cite><strong>Sofia Marchetti</strong><br />UX Designer</cite>
+                </blockquote>
+              </div>
+            </article>
+            <article class="carousel__slide">
+              <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+                <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=33" alt="Dev work"  loading="lazy" /></figure>
+                <blockquote class="carousel__copy stack">
+                  <h3>Slide Three</h3>
+                  <p>The tokens, the grids, the primitives. It all connects.</p>
+                  <cite><strong>Marcus Chen</strong><br />Full-Stack Engineer</cite>
+                </blockquote>
+              </div>
+            </article>
+            <article class="carousel__slide">
+              <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+                <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=34" alt="Product work"  loading="lazy" /></figure>
+                <blockquote class="carousel__copy stack">
+                  <h3>Slide Four</h3>
+                  <p>It feels like a real system, not just a page with styles.</p>
+                  <cite><strong>Nina Alvarez</strong><br />Product Designer</cite>
+                </blockquote>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Gallery</span>
+        <h2 class="section-header__title">Shadowbox gallery with captions and descriptions.</h2>
+      </header>
+
+      <ul class="gallery">
+        <li class="gallery__item">
+          <figure>
+            <button type="button" class="gallery__thumb" popovertarget="lb-1"><img class="gallery__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="City skyline at dusk"  loading="lazy" /></button>
+            <figcaption class="gallery__caption">City skyline at dusk</figcaption>
+          </figure>
+          <dialog id="lb-1" class="lightbox" popover>
+            <button type="button" class="lightbox__close" popovertarget="lb-1" popovertargetaction="hide" aria-label="Close">✕</button>
+            <figure class="lightbox__figure"><img class="lightbox__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600" alt="City skyline at dusk"  loading="lazy" /><figcaption class="lightbox__caption">City skyline at dusk reflected across the water.</figcaption></figure>
+          </dialog>
+        </li>
+        <li class="gallery__item">
+          <figure>
+            <button type="button" class="gallery__thumb" popovertarget="lb-2"><img class="gallery__image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=600" alt="Forest path in soft morning light"  loading="lazy" /></button>
+            <figcaption class="gallery__caption">Forest path in soft morning light</figcaption>
+          </figure>
+          <dialog id="lb-2" class="lightbox" popover>
+            <button type="button" class="lightbox__close" popovertarget="lb-2" popovertargetaction="hide" aria-label="Close">✕</button>
+            <figure class="lightbox__figure"><img class="lightbox__image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1600" alt="Forest path in soft morning light"  loading="lazy" /><figcaption class="lightbox__caption">A quiet forest path framed by dense trees.</figcaption></figure>
+          </dialog>
+        </li>
+        <li class="gallery__item">
+          <figure>
+            <button type="button" class="gallery__thumb" popovertarget="lb-3"><img class="gallery__image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600" alt="Notebook and tools on a desk"  loading="lazy" /></button>
+            <figcaption class="gallery__caption">Notebook and tools on a desk</figcaption>
+          </figure>
+          <dialog id="lb-3" class="lightbox" popover>
+            <button type="button" class="lightbox__close" popovertarget="lb-3" popovertargetaction="hide" aria-label="Close">✕</button>
+            <figure class="lightbox__figure"><img class="lightbox__image" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600" alt="Notebook and tools on a desk"  loading="lazy" /><figcaption class="lightbox__caption">A desk scene with notebook and tools.</figcaption></figure>
+          </dialog>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container section">
+      <header class="section-header stack">
+        <span class="section-header__eyebrow">Form</span>
+        <h2 class="section-header__title">A minimal but reusable form system.</h2>
+        <p class="section-header__intro">Labels, help text, input states, and enough structure to build contact forms, onboarding forms, and application flows.</p>
+      </header>
+
+      <form class="form card stack">
+        <div class="form__field stack">
+          <label class="form__label" for="name">Full name</label>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Jane Smith" />
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="email">Email address</label>
+          <input class="form__input" type="email" id="email" name="email" placeholder="jane@example.com" />
+          <p class="form__help">We’ll only use this to respond to your enquiry.</p>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="topic">Topic</label>
+          <select class="form__select" id="topic" name="topic">
+            <option value="">Please choose</option>
+            <option>Project enquiry</option>
+            <option>Course question</option>
+            <option>General feedback</option>
+          </select>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="message">Message</label>
+          <textarea class="form__textarea" id="message" name="message" placeholder="Message..."></textarea>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="company">Company</label>
+          <input class="form__input" type="text" id="company" name="company" aria-describedby="company-error" />
+          <p class="form__error" id="company-error">Example error state.</p>
+        </div>
+        <div class="cluster" aria-label="Form actions">
+          <button class="btn btn--primary" type="submit">Send Message</button>
+          <button class="btn btn--secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="faq" class="container section max-w-narrow stack">
+      <header class="section-header stack text-center">
+        <span class="section-header__eyebrow">FAQ</span>
+        <h2 class="section-header__title">Frequently Asked Questions</h2>
+      </header>
+      <details class="accordion">
+      <summary class="accordion__summary">Do I need JavaScript?</summary>
+      <div class="accordion__content">Only for the carousel controls.</div>
+    </details>
+      <details class="accordion">
+      <summary class="accordion__summary">Why use CSS Variables?</summary>
+      <div class="accordion__content">Change one value to update the whole system.</div>
+    </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container stack">
+      <h2 class="site-footer__title">Agency.io</h2>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+      <p class="site-footer__copyright">© 2026 Advanced UX Design Class.</p>
+    </div>
+  </footer>
+
+  </body>
+</html>

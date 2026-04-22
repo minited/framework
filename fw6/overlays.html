@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Overlays</title>
+  <!--
+  Overlays — Drawer · Action Menu · Popover Card
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/overlays.css
+  - css/components/form.css
+  - css/components/form-extended.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/overlays.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/form-extended.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Overlays</span>
+      <h1 class="section-header__title">Overlays component demo</h1>
+      <p class="section-header__intro">General-purpose drawer/offcanvas, action menus, and popover cards — all using the Popover API.</p>
+    </header>
+
+    <!-- Drawer -->
+    <section class="stack" aria-label="Drawer">
+      <h2 style="font-size: 1rem; font-weight: 700;">Drawer / offcanvas</h2>
+      <div class="cluster">
+        <button class="btn btn--secondary" popovertarget="drawer-start">Open start drawer</button>
+        <button class="btn btn--secondary" popovertarget="drawer-end">Open end drawer</button>
+        <button class="btn btn--primary" popovertarget="drawer-filter">Open filter drawer</button>
+      </div>
+      <ul class="stack" style="--stack-space: var(--space-2); color: var(--color-muted); font-size: 0.88rem; list-style: disc; padding-inline-start: 1.5rem;">
+        <li>Uses the Popover API — add <code>popover="manual"</code> to the element.</li>
+        <li>Click the backdrop or the close button to dismiss.</li>
+        <li>Add <code>.drawer--end</code> for a right/inline-end panel.</li>
+        <li>Override width: <code>style="--drawer-panel-width: 480px"</code>.</li>
+      </ul>
+    </section>
+
+    <!-- Action menu -->
+    <section class="stack" aria-label="Action menu">
+      <h2 style="font-size: 1rem; font-weight: 700;">Action menu</h2>
+      <p style="color: var(--color-muted); font-size: 0.9rem;">CSS-only version uses <code>:focus-within</code>. Click trigger to open; click away to close. For the Popover API version, add <code>popover</code> to the list and wire up a button.</p>
+      <div class="cluster" style="align-items: flex-start; gap: var(--space-8);">
+
+        <!-- CSS-only action menu -->
+        <div>
+          <p style="font-size: 0.8rem; color: var(--color-muted); margin-block-end: var(--space-2);">CSS-only (:focus-within)</p>
+          <div class="action-menu">
+            <button class="btn btn--secondary" style="padding: 0.5rem 0.75rem;">⋯ Actions</button>
+            <ul class="action-menu__list" role="menu">
+              <li><button class="action-menu__item" role="menuitem">✎ Edit</button></li>
+              <li><button class="action-menu__item" role="menuitem">⧉ Duplicate</button></li>
+              <li><button class="action-menu__item" role="menuitem">⤓ Export</button></li>
+              <li class="action-menu__divider" role="separator"></li>
+              <li><span class="action-menu__label">Danger zone</span></li>
+              <li><button class="action-menu__item action-menu__item--danger" role="menuitem">⊗ Delete</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Popover API action menu -->
+        <div>
+          <p style="font-size: 0.8rem; color: var(--color-muted); margin-block-end: var(--space-2);">Popover API</p>
+          <div class="action-menu">
+            <button class="btn btn--secondary" style="padding: 0.5rem 0.75rem;"
+                    popovertarget="action-menu-popover">⋯ Actions</button>
+            <ul class="action-menu__list" id="action-menu-popover" popover role="menu">
+              <li><button class="action-menu__item" role="menuitem" popovertarget="action-menu-popover" popovertargetaction="hide">✎ Edit</button></li>
+              <li><button class="action-menu__item" role="menuitem" popovertarget="action-menu-popover" popovertargetaction="hide">⧉ Duplicate</button></li>
+              <li><button class="action-menu__item" role="menuitem" popovertarget="action-menu-popover" popovertargetaction="hide">⤓ Export</button></li>
+              <li class="action-menu__divider" role="separator"></li>
+              <li><button class="action-menu__item action-menu__item--danger" role="menuitem" popovertarget="action-menu-popover" popovertargetaction="hide">⊗ Delete</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- In-context: table row -->
+        <div style="flex: 1; min-width: 280px;">
+          <p style="font-size: 0.8rem; color: var(--color-muted); margin-block-end: var(--space-2);">In context — table row</p>
+          <div class="card" style="padding: var(--space-4);">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);">
+              <div>
+                <div style="font-weight: 600; font-size: 0.9rem;">Project Alpha</div>
+                <div style="font-size: 0.8rem; color: var(--color-muted);">Updated 2 days ago</div>
+              </div>
+              <div class="action-menu">
+                <button class="btn btn--secondary" style="padding: 0.4rem 0.6rem; font-size: 0.9rem;"
+                        aria-label="Project actions">⋯</button>
+                <ul class="action-menu__list" role="menu">
+                  <li><button class="action-menu__item" role="menuitem">✎ Rename</button></li>
+                  <li><button class="action-menu__item" role="menuitem">⧉ Duplicate</button></li>
+                  <li class="action-menu__divider"></li>
+                  <li><button class="action-menu__item action-menu__item--danger" role="menuitem">⊗ Delete</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Popover card -->
+    <section class="stack" aria-label="Popover card">
+      <h2 style="font-size: 1rem; font-weight: 700;">Popover card</h2>
+      <div class="cluster" style="align-items: flex-start;">
+        <button class="btn btn--secondary" popovertarget="profile-card">View profile</button>
+        <button class="btn btn--secondary" popovertarget="info-card">More info</button>
+      </div>
+      <p style="color: var(--color-muted); font-size: 0.88rem;">Override width: <code>style="--popover-card-width: 400px"</code>. Click anywhere outside to dismiss.</p>
+    </section>
+
+  </main>
+
+  <!-- ── Drawers ─────────────────────────────────────────────────────────────── -->
+  <aside class="drawer" id="drawer-start" popover="manual">
+    <div class="drawer__header">
+      <h2 class="drawer__title">Start drawer</h2>
+      <button class="drawer__close" popovertarget="drawer-start" popovertargetaction="hide" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer__body stack">
+      <p style="color: var(--color-muted); font-size: 0.9rem;">This is a general-purpose panel that slides from the start (left in LTR) edge. Use it for navigation, filters, or settings.</p>
+      <p style="color: var(--color-muted); font-size: 0.9rem;">Any content can go here — nav links, forms, lists, etc.</p>
+    </div>
+    <div class="drawer__footer">
+      <button class="btn btn--secondary" popovertarget="drawer-start" popovertargetaction="hide">Close</button>
+    </div>
+  </aside>
+
+  <aside class="drawer drawer--end" id="drawer-end" popover="manual">
+    <div class="drawer__header">
+      <h2 class="drawer__title">End drawer</h2>
+      <button class="drawer__close" popovertarget="drawer-end" popovertargetaction="hide" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer__body stack">
+      <p style="color: var(--color-muted); font-size: 0.9rem;">This panel slides from the end (right in LTR) edge. Add <code>.drawer--end</code> to flip it.</p>
+    </div>
+    <div class="drawer__footer">
+      <button class="btn btn--secondary" popovertarget="drawer-end" popovertargetaction="hide">Close</button>
+    </div>
+  </aside>
+
+  <aside class="drawer drawer--end" id="drawer-filter" popover="manual" style="--drawer-panel-width: 320px;">
+    <div class="drawer__header">
+      <h2 class="drawer__title">Filters</h2>
+      <button class="drawer__close" popovertarget="drawer-filter" popovertargetaction="hide" aria-label="Close">✕</button>
+    </div>
+    <div class="drawer__body stack">
+      <fieldset style="border: none; padding: 0; margin: 0;">
+        <legend style="font-weight: 600; font-size: 0.88rem; margin-block-end: var(--space-4);">Category</legend>
+        <div class="stack" style="--stack-space: var(--space-4);">
+          <label class="checkbox">
+            <input class="checkbox__control" type="checkbox" checked />
+            <span style="font-size: 0.9rem;">Web Development</span>
+          </label>
+          <label class="checkbox">
+            <input class="checkbox__control" type="checkbox" />
+            <span style="font-size: 0.9rem;">Design</span>
+          </label>
+          <label class="checkbox">
+            <input class="checkbox__control" type="checkbox" checked />
+            <span style="font-size: 0.9rem;">UX Research</span>
+          </label>
+        </div>
+      </fieldset>
+      <hr style="border: none; border-block-start: 1px solid var(--color-border);" />
+      <fieldset style="border: none; padding: 0; margin: 0;">
+        <legend style="font-weight: 600; font-size: 0.88rem; margin-block-end: var(--space-4);">Level</legend>
+        <div class="stack" style="--stack-space: var(--space-4);">
+          <label class="checkbox">
+            <input class="checkbox__control" type="checkbox" checked />
+            <span style="font-size: 0.9rem;">Beginner</span>
+          </label>
+          <label class="checkbox">
+            <input class="checkbox__control" type="checkbox" />
+            <span style="font-size: 0.9rem;">Intermediate</span>
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="drawer__footer">
+      <button class="btn btn--secondary" popovertarget="drawer-filter" popovertargetaction="hide">Reset</button>
+      <button class="btn btn--primary" popovertarget="drawer-filter" popovertargetaction="hide">Apply filters</button>
+    </div>
+  </aside>
+
+  <!-- ── Popover cards ──────────────────────────────────────────────────────── -->
+  <div class="popover-card" id="profile-card" popover>
+    <div class="popover-card__header">
+      <div class="popover-card__avatar" style="display: grid; place-items: center; background: var(--color-accent); color: var(--color-on-accent); font-weight: 800;">AR</div>
+      <div>
+        <div class="popover-card__name">Alex Rivera</div>
+        <div class="popover-card__sub">Product Designer · Perth, AU</div>
+      </div>
+    </div>
+    <p class="popover-card__body">Working on the CSS framework and component library. Open to collaboration.</p>
+    <div class="popover-card__actions">
+      <a class="btn btn--primary" href="#" style="font-size: 0.85rem; padding: 0.5rem 1rem;">View profile</a>
+      <a class="btn btn--secondary" href="#" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Message</a>
+    </div>
+  </div>
+
+  <div class="popover-card" id="info-card" popover>
+    <div class="popover-card__header">
+      <div style="font-size: 1.5rem;">ℹ</div>
+      <div>
+        <div class="popover-card__name">About this feature</div>
+      </div>
+    </div>
+    <p class="popover-card__body">Popover cards use the Popover API and appear above all other content. They dismiss on click-outside or Escape with no JavaScript required.</p>
+    <div class="popover-card__actions">
+      <a class="btn btn--secondary" href="#" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Read the docs</a>
+    </div>
+  </div>
+
+</body>
+</html>
