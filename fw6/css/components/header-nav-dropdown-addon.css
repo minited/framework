@@ -1,0 +1,91 @@
+@layer components {
+  .site-nav__submenu-container {
+    position: relative;
+  }
+
+  .site-nav__submenu-toggle,
+  .site-nav__submenu-container > summary {
+    display: block;
+    padding: 0.65rem 0.8rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .site-nav__submenu-toggle:hover,
+  .site-nav__submenu-container > summary:hover,
+  .site-nav__submenu-container[open] > summary {
+    background: var(--color-hover);
+    color: var(--color-accent);
+  }
+
+  .site-nav__submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav__submenu a,
+  .site-nav .sub-menu a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .site-nav__submenu a:hover,
+  .site-nav .sub-menu a:hover {
+    background: var(--color-hover);
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 1023px) {
+    .site-nav__submenu-container,
+    .site-nav .menu-item-has-children {
+      width: 100%;
+    }
+
+    .site-nav__submenu,
+    .site-nav .sub-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      width: 100%;
+      padding-block-start: 0.5rem;
+      padding-inline-start: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav .menu-item-has-children {
+      position: relative;
+    }
+
+    :is(.site-nav__submenu, .site-nav .menu-item-has-children > .sub-menu) {
+      position: absolute;
+      top: calc(100% + var(--space-2));
+      left: 0;
+      min-width: 220px;
+      display: none;
+      background: var(--color-elevated);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg, var(--radius));
+      padding: 0.6rem;
+      box-shadow: var(--shadow-elevated);
+      z-index: 120;
+    }
+
+    .site-nav__submenu-container[open] > .site-nav__submenu {
+      display: block;
+    }
+
+    .site-nav .menu-item-has-children:hover > .sub-menu,
+    .site-nav .menu-item-has-children:focus-within > .sub-menu {
+      display: block;
+    }
+  }
+}

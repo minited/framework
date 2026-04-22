@@ -1,0 +1,21 @@
+@layer components {
+  .hero-split {
+    --cols: 1;
+    --cols-lg: 2;
+    --grid-gap: var(--space-8);
+    margin: 0;
+  }
+
+  .hero-split__media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: var(--hero-split-media-min, 22rem);
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-split__copy {
+    margin: 0;
+  }
+}

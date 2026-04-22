@@ -1,0 +1,51 @@
+@layer components {
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    display: grid;
+    place-items: center;
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    color: var(--hero-text);
+    text-align: center;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.72;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    max-width: var(--hero-content-max, 800px);
+    --stack-space: var(--space-4);
+  }
+
+  .hero__title {
+    text-shadow: var(--hero-text-shadow);
+  }
+
+  .hero__subtitle {
+    color: var(--hero-muted);
+    text-shadow: var(--hero-text-shadow);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--hero-overlay);
+    z-index: 2;
+  }
+
+  .hero--fullbleed {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,59 @@
+@layer components {
+  .lightbox {
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+
+  @supports (transition-behavior: allow-discrete) {
+    .lightbox {
+      transition:
+        opacity var(--transition-fast),
+        display var(--transition-fast) allow-discrete,
+        overlay var(--transition-fast) allow-discrete;
+    }
+  }
+
+  .lightbox:popover-open {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .lightbox:popover-open {
+      opacity: 0;
+    }
+  }
+
+  .lightbox::backdrop {
+    background: rgb(0 0 0 / 0);
+    transition: background var(--transition-fast);
+  }
+
+  .lightbox:popover-open::backdrop {
+    background: var(--color-backdrop);
+  }
+
+  @starting-style {
+    .lightbox:popover-open::backdrop {
+      background: rgb(0 0 0 / 0);
+    }
+  }
+
+  .lightbox__figure {
+    transform: translateY(8px);
+    transition: transform var(--transition-fast);
+  }
+
+  .lightbox:popover-open .lightbox__figure {
+    transform: translateY(0);
+  }
+
+  @starting-style {
+    .lightbox:popover-open .lightbox__figure {
+      transform: translateY(8px);
+    }
+  }
+
+  .lightbox__close {
+    z-index: 2;
+  }
+}
