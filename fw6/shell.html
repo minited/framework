@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Shell — Sidebar + Main</title>
+  <!--
+  Shell — Sidebar + Main layout
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/shell.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/shell.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+<div class="shell">
+
+  <aside class="shell__sidebar">
+    <a class="sidebar-brand" href="#">◈ Brand</a>
+    <nav class="sidebar-nav" aria-label="Sidebar navigation">
+      <div class="sidebar-nav__section">
+        <div class="sidebar-nav__label">Main</div>
+        <a class="sidebar-nav__link sidebar-nav__link--active" href="#">
+          <span class="sidebar-nav__icon">▣</span> Dashboard
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◎</span> Analytics
+          <span class="sidebar-nav__badge badge badge--accent badge--pill badge--sm">3</span>
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">⊞</span> Projects
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◷</span> Activity
+        </a>
+      </div>
+      <div class="sidebar-nav__section">
+        <div class="sidebar-nav__label">Account</div>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◻</span> Settings
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◈</span> Help
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="shell__main container section stack" style="--stack-space: var(--space-8);">
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Shell</span>
+      <h1 class="section-header__title">Sidebar + Main layout</h1>
+      <p class="section-header__intro">The <code>.shell</code> primitive creates a sticky sidebar beside a scrollable main area. On mobile (&lt; 768px) it stacks vertically.</p>
+    </header>
+
+    <div class="card stack" style="--stack-space: var(--space-4);">
+      <strong>How to use</strong>
+      <ul class="stack" style="--stack-space: var(--space-2); color: var(--color-muted); font-size: 0.9rem; list-style: disc; padding-inline-start: 1.5rem;">
+        <li>Wrap <code>.shell__sidebar</code> and <code>.shell__main</code> in <code>.shell</code>.</li>
+        <li>Override sidebar width: <code>style="--sidebar-width: 20rem"</code> on <code>.shell</code>.</li>
+        <li>The sidebar is sticky and scrolls independently from main.</li>
+        <li>See <code>shell-dashboard-variant.html</code> for the full dashboard shell with a topbar.</li>
+        <li>See <code>shell-master-detail-variant.html</code> and <code>shell-filter-results-variant.html</code> for other layout patterns.</li>
+      </ul>
+    </div>
+
+    <div class="auto-grid" style="--min: 12rem;">
+      <div class="card">Content area A</div>
+      <div class="card">Content area B</div>
+      <div class="card">Content area C</div>
+      <div class="card">Content area D</div>
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>

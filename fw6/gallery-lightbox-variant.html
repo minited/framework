@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Gallery Lightbox Variant</title>
+  <!--
+  Gallery Lightbox Variant
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/gallery.css
+  - css/components/lightbox.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/gallery.css" />
+  <link rel="stylesheet" href="css/components/lightbox.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Gallery</span>
+      <h1 class="section-header__title">Gallery and lightbox demo</h1>
+      <p class="section-header__intro">These two components are paired because the lightbox markup is launched from gallery thumbnails.</p>
+    </header>
+
+    <ul class="gallery">
+      <li class="gallery__item">
+        <figure>
+          <button type="button" class="gallery__thumb" popovertarget="lb-1"><img class="gallery__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="City"  loading="lazy" /></button>
+          <figcaption class="gallery__caption">City skyline at dusk</figcaption>
+        </figure>
+        <dialog id="lb-1" class="lightbox" popover>
+          <button type="button" class="lightbox__close" popovertarget="lb-1" popovertargetaction="hide">✕</button>
+          <figure class="lightbox__figure"><img class="lightbox__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600" alt="City"  loading="lazy" /><figcaption class="lightbox__caption">City skyline at dusk reflected across the water.</figcaption></figure>
+        </dialog>
+      </li>
+      <li class="gallery__item">
+        <figure>
+          <button type="button" class="gallery__thumb" popovertarget="lb-2"><img class="gallery__image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=600" alt="Forest"  loading="lazy" /></button>
+          <figcaption class="gallery__caption">Forest path in soft morning light</figcaption>
+        </figure>
+        <dialog id="lb-2" class="lightbox" popover>
+          <button type="button" class="lightbox__close" popovertarget="lb-2" popovertargetaction="hide">✕</button>
+          <figure class="lightbox__figure"><img class="lightbox__image" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1600" alt="Forest"  loading="lazy" /><figcaption class="lightbox__caption">A quiet forest path framed by dense trees.</figcaption></figure>
+        </dialog>
+      </li>
+    </ul>
+  </main>
+  
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Carousel Arrow Variant</title>
+  <!--
+  Carousel Arrow Variant
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/carousel.css
+  - css/components/carousel-arrow-addon.css
+  - css/custom.css
+  JavaScript:
+  - js/carousel-arrow-addon.js
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/carousel.css" />
+  <link rel="stylesheet" href="css/components/carousel-arrow-addon.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <main id="main" class="container section stack">
+    <header class="section-header stack text-center">
+      <span class="section-header__eyebrow">Testimonials</span>
+      <h1 class="section-header__title">Carousel Arrow Variant</h1>
+      <p class="section-header__intro">This variant adds arrow controls, a hidden status announcer, and JavaScript on top of the lean base carousel.</p>
+    </header>
+
+    <div class="carousel" aria-label="Example content carousel">
+      <div class="carousel__viewport">
+        <div class="carousel__track">
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=31" alt="Student work"  loading="lazy" /></figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide One</h2>
+                <p>Learning <code>@layer</code> was the single biggest unlock of my career.</p>
+                <cite><strong>Jamie Okonkwo</strong><br />Front-End Developer</cite>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=32" alt="UX work"  loading="lazy" /></figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide Two</h2>
+                <p>Container-aware thinking changed how I design components.</p>
+                <cite><strong>Sofia Marchetti</strong><br />UX Designer</cite>
+              </blockquote>
+            </div>
+          </article>
+
+          <article class="carousel__slide">
+            <div class="carousel__slide-inner grid items-center" style="--cols-lg: 2;">
+              <figure class="carousel__media"><img src="https://picsum.photos/960/540?random=33" alt="Development work"  loading="lazy" /></figure>
+              <blockquote class="carousel__copy stack">
+                <h2>Slide Three</h2>
+                <p>The tokens, the grids, the primitives. It all connects.</p>
+                <cite><strong>Marcus Chen</strong><br />Full-Stack Engineer</cite>
+              </blockquote>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="carousel__status visually-hidden" aria-live="polite" aria-atomic="true">Slide 1 of x</div>
+      <button type="button" class="carousel__control carousel__control--prev" aria-label="Previous slide">❮</button>
+      <button type="button" class="carousel__control carousel__control--next" aria-label="Next slide">❯</button>
+    </div>
+  </main>
+
+  <script src="js/carousel-arrow-addon.js"></script>
+</body>
+</html>

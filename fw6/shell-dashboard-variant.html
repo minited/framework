@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Shell — Dashboard</title>
+  <!--
+  Shell — Dashboard (sidebar + topbar + main)
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/shell.css
+  - css/components/badge.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/shell.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+<div class="dashboard-shell">
+
+  <aside class="dashboard-shell__sidebar">
+    <a class="sidebar-brand" href="#">◈ Brand</a>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav__section">
+        <div class="sidebar-nav__label">Main</div>
+        <a class="sidebar-nav__link sidebar-nav__link--active" href="#">
+          <span class="sidebar-nav__icon">▣</span> Dashboard
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◎</span> Analytics
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">⊞</span> Projects
+          <span class="sidebar-nav__badge badge badge--error badge--pill badge--sm">2</span>
+        </a>
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◷</span> Activity
+        </a>
+      </div>
+      <div class="sidebar-nav__section">
+        <a class="sidebar-nav__link" href="#">
+          <span class="sidebar-nav__icon">◻</span> Settings
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <header class="dashboard-shell__topbar">
+    <strong>Dashboard</strong>
+    <div class="cluster" style="gap: var(--space-4);">
+      <button class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">+ New</button>
+      <button class="btn btn--secondary" style="padding: 0.5rem 0.75rem;" aria-label="Notifications">🔔</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell__main stack" style="--stack-space: var(--space-8);">
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Shell — Dashboard variant</span>
+      <h1 class="section-header__title">Dashboard shell</h1>
+      <p class="section-header__intro">Combines a sticky sidebar, a sticky topbar, and a scrollable main area using CSS Grid. The sidebar spans the full viewport height; the topbar sits above main only.</p>
+    </header>
+
+    <div class="card stack" style="--stack-space: var(--space-4);">
+      <strong>How to use</strong>
+      <ul class="stack" style="--stack-space: var(--space-2); color: var(--color-muted); font-size: 0.9rem; list-style: disc; padding-inline-start: 1.5rem;">
+        <li>Three children: <code>.dashboard-shell__sidebar</code>, <code>.dashboard-shell__topbar</code>, <code>.dashboard-shell__main</code>.</li>
+        <li>Override sidebar width: <code>style="--sidebar-width: 20rem"</code> on <code>.dashboard-shell</code>.</li>
+        <li>On mobile (&lt; 1024px) the sidebar hides; the topbar spans full width.</li>
+        <li>The topbar uses <code>backdrop-filter: blur</code> for a frosted glass effect over scrolling content.</li>
+      </ul>
+    </div>
+
+    <div class="auto-grid" style="--min: 12rem;">
+      <div class="card">Panel A</div>
+      <div class="card">Panel B</div>
+      <div class="card">Panel C</div>
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>

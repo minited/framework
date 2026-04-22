@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="color-scheme" content="dark light"/>
+<title>Skeleton</title>
+<link rel="stylesheet" href="css/reset.css"/><link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/components/header-nav.css"/><link rel="stylesheet" href="css/components/site-footer.css"/>
+<link rel="stylesheet" href="css/components/card.css"/><link rel="stylesheet" href="css/components/skeleton.css"/>
+<link rel="stylesheet" href="css/custom.css"/>
+</head><body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header"><div class="site-header__inner container">
+<a href="#" class="site-header__brand">Framework</a>
+<button type="button" class="site-header__toggle" popovertarget="site-nav" aria-label="Open menu">
+<span aria-hidden="true">☰</span><span class="visually-hidden">Menu</span></button>
+<nav id="site-nav" class="site-nav" popover aria-label="Main navigation">
+<a href="#" class="site-nav__link">Components</a>
+</nav></div></header>
+<main id="main"><section class="container section stack">
+<header class="section-header stack"><span class="section-header__eyebrow">Component</span>
+<h1 class="section-header__title">Skeleton</h1>
+<p class="section-header__intro">Placeholder blocks for loading content.</p></header>
+<section class="stack"><h2>Individual shapes</h2>
+<div class="stack">
+<span class="skeleton skeleton--title"></span>
+<span class="skeleton skeleton--text"></span>
+<span class="skeleton skeleton--text skeleton--w-75"></span>
+</div>
+<div class="cluster"><span class="skeleton skeleton--avatar"></span><span class="skeleton skeleton--button"></span></div>
+</section>
+<section class="stack"><h2>Card placeholder</h2>
+<div class="auto-grid auto-grid--sm">
+<article class="card stack" aria-busy="true" aria-label="Loading">
+<span class="skeleton skeleton--thumb"></span><span class="skeleton skeleton--title"></span>
+<span class="skeleton skeleton--text"></span><span class="skeleton skeleton--text skeleton--w-60"></span>
+</article>
+<article class="card stack" aria-busy="true" aria-label="Loading">
+<span class="skeleton skeleton--thumb"></span><span class="skeleton skeleton--title"></span>
+<span class="skeleton skeleton--text"></span><span class="skeleton skeleton--text skeleton--w-60"></span>
+</article>
+</div></section>
+<section class="stack"><h2>List row placeholder</h2>
+<ul class="stack" aria-busy="true" aria-label="Loading list">
+<li class="cluster"><span class="skeleton skeleton--avatar"></span>
+<span class="stack flex-1"><span class="skeleton skeleton--title skeleton--w-40"></span><span class="skeleton skeleton--text skeleton--w-80"></span></span></li>
+<li class="cluster"><span class="skeleton skeleton--avatar"></span>
+<span class="stack flex-1"><span class="skeleton skeleton--title skeleton--w-55"></span><span class="skeleton skeleton--text skeleton--w-70"></span></span></li>
+</ul></section>
+</section></main>
+<footer class="site-footer"><div class="container"><p class="text-muted text-center">Framework demo · Skeleton</p></div></footer>
+</body></html>
