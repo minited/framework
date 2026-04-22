@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Book a Session — Starter</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/header-nav.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/form-extended.css" />
+  <link rel="stylesheet" href="css/components/badge.css" />
+  <link rel="stylesheet" href="css/components/data-display.css" />
+  <link rel="stylesheet" href="css/components/alert.css" />
+  <link rel="stylesheet" href="css/components/feedback.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+  <style>
+    /*
+     * Multi-step booking flow — pure CSS via :target + :has()
+     * Steps are shown/hidden by the URL hash. Navigation uses <a href="#panel-N">.
+     */
+
+    /* All panels hidden by default; targeted panel is shown */
+    .form-panel { display: none; }
+    .form-panel:target { display: block; }
+    /* Show step 1 when no hash is active */
+    body:not(:has(.form-panel:target)) #panel-1 { display: block; }
+
+    /* ── Active step indicator ───────────────────────────────────────── */
+    body:not(:has(.form-panel:target)) #step-ind-1 .form-step__indicator,
+    body:has(#panel-1:target)          #step-ind-1 .form-step__indicator,
+    body:has(#panel-2:target)          #step-ind-2 .form-step__indicator,
+    body:has(#panel-3:target)          #step-ind-3 .form-step__indicator {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-on-accent);
+    }
+    body:not(:has(.form-panel:target)) #step-ind-1 .form-step__label,
+    body:has(#panel-1:target)          #step-ind-1 .form-step__label,
+    body:has(#panel-2:target)          #step-ind-2 .form-step__label,
+    body:has(#panel-3:target)          #step-ind-3 .form-step__label {
+      color: var(--color-accent);
+    }
+
+    /* ── Complete step indicators ───────────────────────────────────── */
+    body:has(#panel-2:target) #step-ind-1 .form-step__indicator,
+    body:has(#panel-3:target) #step-ind-1 .form-step__indicator,
+    body:has(#panel-3:target) #step-ind-2 .form-step__indicator,
+    body:has(#panel-success:target) #step-ind-1 .form-step__indicator,
+    body:has(#panel-success:target) #step-ind-2 .form-step__indicator,
+    body:has(#panel-success:target) #step-ind-3 .form-step__indicator {
+      background: var(--color-success);
+      border-color: var(--color-success);
+      font-size: 0;
+    }
+    body:has(#panel-2:target) #step-ind-1 .form-step__indicator::after,
+    body:has(#panel-3:target) #step-ind-1 .form-step__indicator::after,
+    body:has(#panel-3:target) #step-ind-2 .form-step__indicator::after,
+    body:has(#panel-success:target) #step-ind-1 .form-step__indicator::after,
+    body:has(#panel-success:target) #step-ind-2 .form-step__indicator::after,
+    body:has(#panel-success:target) #step-ind-3 .form-step__indicator::after {
+      content: "✓";
+      font-size: 0.82rem;
+      color: var(--color-bg);
+    }
+    body:has(#panel-2:target) #step-ind-1 .form-step__label,
+    body:has(#panel-3:target) #step-ind-1 .form-step__label,
+    body:has(#panel-3:target) #step-ind-2 .form-step__label,
+    body:has(#panel-success:target) #step-ind-1 .form-step__label,
+    body:has(#panel-success:target) #step-ind-2 .form-step__label,
+    body:has(#panel-success:target) #step-ind-3 .form-step__label {
+      color: var(--color-success);
+    }
+
+    /* Connecting lines turn green */
+    body:has(#panel-2:target)   #step-ind-1::after,
+    body:has(#panel-3:target)   #step-ind-1::after,
+    body:has(#panel-3:target)   #step-ind-2::after,
+    body:has(#panel-success:target) #step-ind-1::after,
+    body:has(#panel-success:target) #step-ind-2::after {
+      background: var(--color-success);
+    }
+
+    /* Hide step bar on success screen */
+    body:has(#panel-success:target) .form-steps { display: none; }
+  </style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="site-header__brand" href="#">BookIt</a>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="container" style="max-width: 680px;">
+    <div class="stack" style="--stack-space: var(--space-8);">
+
+      <div class="section-header stack" style="text-align: center;">
+        <div class="section-header__eyebrow">Step-by-step</div>
+        <h1 class="section-header__title">Book a Session</h1>
+        <p class="section-header__intro">Reserve your spot in three quick steps.</p>
+      </div>
+
+      <!-- Step indicator -->
+      <div class="form-steps">
+        <div class="form-step" id="step-ind-1">
+          <div class="form-step__indicator">1</div>
+          <span class="form-step__label">Service</span>
+        </div>
+        <div class="form-step" id="step-ind-2">
+          <div class="form-step__indicator">2</div>
+          <span class="form-step__label">Date &amp; Time</span>
+        </div>
+        <div class="form-step" id="step-ind-3">
+          <div class="form-step__indicator">3</div>
+          <span class="form-step__label">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div id="panel-1">
+        <div class="card stack" style="--stack-space: var(--space-6);">
+          <h2 style="font-size: 1rem; font-weight: 700;">Choose a service</h2>
+          <fieldset class="radio-group" style="border: none; padding: 0;">
+            <legend class="visually-hidden">Service type</legend>
+            <div class="stack" style="--stack-space: var(--space-4);">
+              <label class="radio">
+                <input class="radio__control" type="radio" name="service" value="consult" />
+                <span>Consultation (30 min)</span>
+              </label>
+              <label class="radio">
+                <input class="radio__control" type="radio" name="service" value="session" checked />
+                <span>Full session (60 min)</span>
+              </label>
+              <label class="radio">
+                <input class="radio__control" type="radio" name="service" value="workshop" />
+                <span>Workshop (2 hours)</span>
+              </label>
+            </div>
+          </fieldset>
+          <div style="display: flex; justify-content: flex-end;">
+            <a class="btn btn--primary" href="#panel-2">Next — Date &amp; Time</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="panel-2" class="form-panel">
+        <div class="card stack" style="--stack-space: var(--space-6);">
+          <h2 style="font-size: 1rem; font-weight: 700;">Choose a date &amp; time</h2>
+          <div class="form__field form__field--valid stack">
+            <label class="form__label" for="booking-date">Date</label>
+            <input class="form__input" id="booking-date" type="date" value="2026-04-28" />
+          </div>
+          <div class="form__field stack">
+            <label class="form__label" for="booking-time">Preferred time</label>
+            <select class="form__select" id="booking-time">
+              <option value="">Select a slot</option>
+              <option value="0900">9:00 AM</option>
+              <option value="1000">10:00 AM</option>
+              <option value="1100">11:00 AM — Recommended</option>
+              <option value="1400">2:00 PM</option>
+            </select>
+          </div>
+          <div class="form__field stack">
+            <label class="form__label" for="booking-notes">Notes (optional)</label>
+            <textarea class="form__textarea" id="booking-notes" style="min-height: 6rem;"
+              placeholder="Anything we should know before the session?"></textarea>
+            <span class="form__help">Max 500 characters.</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <a class="btn btn--secondary" href="#panel-1">← Back</a>
+            <a class="btn btn--primary"   href="#panel-3">Next — Confirm</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div id="panel-3" class="form-panel">
+        <div class="card stack" style="--stack-space: var(--space-6);">
+          <h2 style="font-size: 1rem; font-weight: 700;">Review your booking</h2>
+          <dl class="kv-list">
+            <div><dt>Service</dt><dd>Full session (60 min)</dd></div>
+            <div><dt>Date</dt><dd>Monday, April 28 2026</dd></div>
+            <div><dt>Time</dt><dd>11:00 AM</dd></div>
+            <div><dt>Location</dt><dd>Online — Zoom link sent by email</dd></div>
+          </dl>
+          <div class="alert alert--info" role="note">
+            <span class="alert__icon">ℹ</span>
+            <div class="alert__body">
+              <div class="alert__message">You'll receive a confirmation email with the Zoom link within 5 minutes.</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <a class="btn btn--secondary" href="#panel-2">← Back</a>
+            <a class="btn btn--primary"   href="#panel-success">Confirm booking</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div id="panel-success" class="form-panel">
+        <div class="card" style="text-align: center; padding: var(--space-12);">
+          <div class="empty-state">
+            <div class="empty-state__icon">✅</div>
+            <h2 class="empty-state__title">Booking confirmed!</h2>
+            <p class="empty-state__message">Your session is booked for April 28 at 11:00 AM. Check your email for the confirmation and Zoom link.</p>
+            <div class="empty-state__actions">
+              <a class="btn btn--primary"   href="#">Add to calendar</a>
+              <a class="btn btn--secondary" href="#panel-1">Book another</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

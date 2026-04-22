@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Form Extended</title>
+  <!--
+  Form Extended — Checkboxes · Radios · Toggles · Fieldset · Input Groups
+                  Search · File Upload · Validation · Multi-step
+
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/form.css
+  - css/components/form-extended.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/components/form-extended.css" />
+  <link rel="stylesheet" href="css/components/form-steps.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Form Extended</span>
+      <h1 class="section-header__title">Form extended component demo</h1>
+      <p class="section-header__intro">Custom checkboxes, radio groups, toggle switches, fieldsets, input groups, search fields, file upload, validation states, and a pure-CSS multi-step pattern.</p>
+    </header>
+
+    <!-- Checkboxes -->
+    <section class="stack" aria-label="Checkboxes">
+      <h2 style="font-size: 1rem; font-weight: 700;">Checkboxes</h2>
+      <div class="card stack">
+        <label class="checkbox">
+          <input class="checkbox__control" type="checkbox" checked />
+          <span class="checkbox__label">Email notifications</span>
+        </label>
+        <label class="checkbox">
+          <input class="checkbox__control" type="checkbox" />
+          <span class="checkbox__label">SMS notifications</span>
+        </label>
+        <label class="checkbox">
+          <input class="checkbox__control" type="checkbox" disabled />
+          <span class="checkbox__label">Push notifications (unavailable on your plan)</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Radio group -->
+    <section class="stack" aria-label="Radio group">
+      <h2 style="font-size: 1rem; font-weight: 700;">Radio group</h2>
+      <div class="card">
+        <fieldset class="radio-group">
+          <legend class="radio-group__legend">Choose a plan</legend>
+          <div class="stack" style="--stack-space: var(--space-4);">
+            <label class="radio">
+              <input class="radio__control" type="radio" name="plan" value="starter" />
+              <div><span style="font-weight: 600;">Starter</span><span style="color: var(--color-muted); font-size: 0.88rem;"> — Free, up to 3 projects</span></div>
+            </label>
+            <label class="radio">
+              <input class="radio__control" type="radio" name="plan" value="pro" checked />
+              <div><span style="font-weight: 600;">Pro</span><span style="color: var(--color-muted); font-size: 0.88rem;"> — $29/mo, unlimited projects</span></div>
+            </label>
+            <label class="radio">
+              <input class="radio__control" type="radio" name="plan" value="enterprise" disabled />
+              <div><span style="font-weight: 600;">Enterprise</span><span style="color: var(--color-muted); font-size: 0.88rem;"> — Contact sales</span></div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <!-- Toggles -->
+    <section class="stack" aria-label="Toggle switches">
+      <h2 style="font-size: 1rem; font-weight: 700;">Toggle switches</h2>
+      <div class="card stack">
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" checked />
+          <div><div class="toggle__label" style="font-weight: 600;">Dark mode</div><div style="font-size: 0.85rem; color: var(--color-muted);">Use dark theme across the app.</div></div>
+        </label>
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" />
+          <div><div class="toggle__label" style="font-weight: 600;">Marketing emails</div><div style="font-size: 0.85rem; color: var(--color-muted);">Receive tips, news, and product updates.</div></div>
+        </label>
+        <label class="toggle">
+          <input class="toggle__control" type="checkbox" role="switch" disabled />
+          <div><div class="toggle__label" style="font-weight: 600;">Two-factor authentication</div><div style="font-size: 0.85rem; color: var(--color-muted);">Requires a verified phone number.</div></div>
+        </label>
+      </div>
+    </section>
+
+    <!-- Fieldset -->
+    <section class="stack" aria-label="Fieldset">
+      <h2 style="font-size: 1rem; font-weight: 700;">Fieldset &amp; legend</h2>
+      <fieldset class="fieldset stack">
+        <legend class="fieldset__legend">Billing address</legend>
+        <div class="form__field stack">
+          <label class="form__label" for="street">Street address</label>
+          <input class="form__input" id="street" type="text" placeholder="123 Main St" />
+        </div>
+        <div class="grid" style="--cols: 2;">
+          <div class="form__field stack">
+            <label class="form__label" for="city">City</label>
+            <input class="form__input" id="city" type="text" placeholder="Perth" />
+          </div>
+          <div class="form__field stack">
+            <label class="form__label" for="postcode">Postcode</label>
+            <input class="form__input" id="postcode" type="text" placeholder="6000" />
+          </div>
+        </div>
+      </fieldset>
+    </section>
+
+    <!-- Input groups -->
+    <section class="stack" aria-label="Input groups">
+      <h2 style="font-size: 1rem; font-weight: 700;">Input groups</h2>
+      <div class="card stack">
+        <div class="form__field stack">
+          <label class="form__label">URL with prefix addon</label>
+          <div class="input-group">
+            <span class="input-group__addon">https://</span>
+            <input class="form__input" type="url" placeholder="yourdomain.com" />
+          </div>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label">Amount with currency addon</label>
+          <div class="input-group">
+            <span class="input-group__addon">$</span>
+            <input class="form__input" type="number" placeholder="0.00" />
+            <span class="input-group__addon">AUD</span>
+          </div>
+        </div>
+        <div class="form__field stack">
+          <label class="form__label">With action button</label>
+          <div class="input-group">
+            <input class="form__input" type="email" placeholder="colleague@example.com" />
+            <button class="btn btn--primary input-group__btn">Invite</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search field -->
+    <section class="stack" aria-label="Search field">
+      <h2 style="font-size: 1rem; font-weight: 700;">Search field</h2>
+      <div class="search-field">
+        <span class="search-field__icon" aria-hidden="true">⌕</span>
+        <input class="search-field__input" type="search" placeholder="Search…" aria-label="Search" />
+      </div>
+    </section>
+
+    <!-- File upload -->
+    <section class="stack" aria-label="File upload">
+      <h2 style="font-size: 1rem; font-weight: 700;">File upload</h2>
+      <div class="file-upload">
+        <span class="file-upload__icon">📁</span>
+        <span class="file-upload__label">Choose a file or drag it here</span>
+        <span class="file-upload__hint">PNG, JPG, PDF up to 10 MB</span>
+        <input class="file-upload__input" type="file" aria-label="Upload file" />
+      </div>
+    </section>
+
+    <!-- Disabled and readonly -->
+    <section class="stack" aria-label="Disabled and readonly">
+      <h2 style="font-size: 1rem; font-weight: 700;">Disabled &amp; readonly</h2>
+      <div class="card stack">
+        <div class="form__field stack">
+          <label class="form__label" for="disabled-input">Disabled input</label>
+          <input class="form__input" id="disabled-input" type="text" value="Cannot be edited" disabled />
+        </div>
+        <div class="form__field stack">
+          <label class="form__label" for="readonly-input">Readonly input</label>
+          <input class="form__input" id="readonly-input" type="text" value="Read only — selectable but not editable" readonly />
+        </div>
+      </div>
+    </section>
+
+    <!-- Validation states -->
+    <section class="stack" aria-label="Validation states">
+      <h2 style="font-size: 1rem; font-weight: 700;">Validation states</h2>
+      <div class="card stack">
+        <div class="form__field form__field--valid stack">
+          <label class="form__label" for="valid-input">Username</label>
+          <input class="form__input" id="valid-input" type="text" value="alex_r" />
+          <p class="form__success">Username is available.</p>
+        </div>
+        <div class="form__field form__field--invalid stack">
+          <label class="form__label" for="invalid-input">Password</label>
+          <input class="form__input" id="invalid-input" type="password" value="abc" />
+          <ul class="form__errors stack">
+            <li class="form__error-item">At least 8 characters</li>
+            <li class="form__error-item">Must include a number</li>
+            <li class="form__error-item">Must include a special character</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-step form — pure CSS :target + :has() -->
+    <section class="stack" aria-label="Multi-step form">
+      <h2 style="font-size: 1rem; font-weight: 700;">Multi-step form
+        <span style="font-size: 0.75rem; font-weight: 400; color: var(--color-muted); margin-inline-start: var(--space-4);">Pure CSS — :target + :has()</span>
+      </h2>
+
+      <!-- Step indicator -->
+      <div class="form-steps">
+        <div class="form-step" id="ms-ind-1">
+          <div class="form-step__indicator">1</div>
+          <span class="form-step__label">Account</span>
+        </div>
+        <div class="form-step" id="ms-ind-2">
+          <div class="form-step__indicator">2</div>
+          <span class="form-step__label">Details</span>
+        </div>
+        <div class="form-step" id="ms-ind-3">
+          <div class="form-step__indicator">3</div>
+          <span class="form-step__label">Confirm</span>
+        </div>
+      </div>
+
+      <!-- Step panels — shown/hidden by :target -->
+      <div id="p-1">
+        <div class="card stack">
+          <h3 style="font-size: 0.95rem; font-weight: 700;">Step 1 — Account</h3>
+          <div class="form__field stack">
+            <label class="form__label" for="ms-email">Email</label>
+            <input class="form__input" id="ms-email" type="email" value="alex@example.com" />
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <a class="btn btn--primary" href="#p-2">Next →</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="p-2" class="form-panel">
+        <div class="card stack">
+          <h3 style="font-size: 0.95rem; font-weight: 700;">Step 2 — Details</h3>
+          <div class="form__field stack">
+            <label class="form__label" for="ms-name">Full name</label>
+            <input class="form__input" id="ms-name" type="text" placeholder="Alex Rivera" />
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <a class="btn btn--secondary" href="#p-1">← Back</a>
+            <a class="btn btn--primary"   href="#p-3">Next →</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="p-3" class="form-panel">
+        <div class="card stack">
+          <h3 style="font-size: 0.95rem; font-weight: 700;">Step 3 — Confirm</h3>
+          <p style="color: var(--color-muted); font-size: 0.9rem;">Review your details and submit.</p>
+          <div style="display: flex; justify-content: space-between;">
+            <a class="btn btn--secondary" href="#p-2">← Back</a>
+            <a class="btn btn--primary"   href="#p-1">Submit ✓</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
