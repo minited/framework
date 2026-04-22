@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Form</title>
+  <!--
+  Form
+  
+  This HTML file uses:
+  - css/reset.css
+  - css/core.css
+  - css/components/form.css
+  - css/custom.css
+  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/core.css" />
+  <link rel="stylesheet" href="css/components/form.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <main id="main" class="container section stack">
+    <header class="section-header stack">
+      <span class="section-header__eyebrow">Form</span>
+      <h1 class="section-header__title">Form component demo</h1>
+      <p class="section-header__intro">This page shows the form component with labels, help text, focus states, and an example error state.</p>
+    </header>
+
+    <form class="form card stack">
+      <div class="form__field stack">
+        <label class="form__label" for="name">Full name</label>
+        <input class="form__input" type="text" id="name" name="name" placeholder="Jane Smith" />
+      </div>
+      <div class="form__field stack">
+        <label class="form__label" for="email">Email address</label>
+        <input class="form__input" type="email" id="email" name="email" placeholder="jane@example.com" />
+        <p class="form__help">We’ll only use this to respond to your enquiry.</p>
+      </div>
+      <div class="form__field stack">
+        <label class="form__label" for="topic">Topic</label>
+        <select class="form__select" id="topic" name="topic">
+          <option value="">Please choose</option>
+          <option>Project enquiry</option>
+          <option>General feedback</option>
+        </select>
+      </div>
+      <div class="form__field stack">
+        <label class="form__label" for="message">Message</label>
+        <textarea class="form__textarea" id="message" name="message" placeholder="Message..."></textarea>
+      </div>
+      <div class="form__field stack">
+        <label class="form__label" for="company">Company</label>
+        <input class="form__input" type="text" id="company" name="company" aria-describedby="company-error" />
+        <p class="form__error" id="company-error">Example error state.</p>
+      </div>
+      <div class="cluster" aria-label="Form actions">
+        <button class="btn btn--primary" type="submit">Send Message</button>
+        <button class="btn btn--secondary" type="reset">Reset</button>
+      </div>
+    </form>
+  </main>
+  
+</body>
+</html>
